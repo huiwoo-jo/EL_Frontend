@@ -43,8 +43,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun initQRScanner() {
+        val options = ScanOptions()
+        options.setPrompt("IBDA Login : 사각형 안에 QR 코드를 입력해주세요.")     // setPrompt - 하단 문구
+        options.setOrientationLocked(false)     // setOrientationLocked - 가로, 세로 방향 전환
+        options.setBeepEnabled(false)           // setBeepEnabled - 바코드 포착 시, Beep 소리 발생 여부 지정.
+        //options.setTimeout(8000)                // Timeout 을 지정하여 8000ms 후 종료되는 SCAN
+        barcodeLauncher.launch(options)
+    }
+
     private fun onScanButtonClicked(){
-        barcodeLauncher.launch(ScanOptions())
+        initQRScanner()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

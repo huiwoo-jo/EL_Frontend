@@ -8,7 +8,7 @@
     tools:context="graduation.project.dongyang.el.ibda.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ibdaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="231dp"
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/ibdaTitle"
         app:layout_constraintVertical_bias="0.189"
         app:srcCompat="@drawable/ibda_logo_png" />
 
@@ -53,7 +53,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.759" />
 
-
+    <TextView
+        android:id="@+id/qrResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QR Result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.691" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

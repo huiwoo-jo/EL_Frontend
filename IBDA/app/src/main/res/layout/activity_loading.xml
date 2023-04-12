@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="graduation.project.dongyang.el.ibda.Loading"
+    tools:context="graduation.project.dongyang.el.ibda.LoadingActivity"
     android:id="@+id/loadingBG">
 
     <ViewFlipper

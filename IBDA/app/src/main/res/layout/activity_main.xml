@@ -54,10 +54,10 @@
         app:layout_constraintVertical_bias="0.759" />
 
     <TextView
-        android:id="@+id/qrResult"
+        android:id="@+id/timerResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="QR Result"
+        android:text="10 초 후 대기 모드로 전환됩니다."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"

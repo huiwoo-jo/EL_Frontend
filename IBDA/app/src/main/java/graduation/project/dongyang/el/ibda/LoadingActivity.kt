@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kr.project.dongyang.EL.IBDA.databinding.ActivityLoadingBinding
 
-class `Loading` : AppCompatActivity() {
+class LoadingActivity : AppCompatActivity() {
     private val binding by lazy{
         ActivityLoadingBinding.inflate(layoutInflater)
     }

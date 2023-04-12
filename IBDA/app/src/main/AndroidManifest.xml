@@ -23,14 +23,14 @@
             android:screenOrientation="fullSensor"
             tools:replace="screenOrientation" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.Loading"
+            android:name="graduation.project.dongyang.el.ibda.LoadingActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="graduation.project.dongyang.el.ibda.CreateQR"
+            android:name="graduation.project.dongyang.el.ibda.CreateQRActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

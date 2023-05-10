@@ -16,12 +16,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="150dp"
-                android:src="@drawable/dongyang_logo_png"
-                />
+                android:src="@drawable/dongyang_logo_png" />
         </LinearLayout>
 
         <LinearLayout

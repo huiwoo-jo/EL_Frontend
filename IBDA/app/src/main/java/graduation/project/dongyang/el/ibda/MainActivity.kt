@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Job
-import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainBinding
 import java.util.*
 
@@ -29,6 +29,23 @@ class MainActivity : AppCompatActivity() {
     val mTimer = Timer()
     //
 
+    // start : recycler View
+    var manager01 = LinearLayoutManager(this)
+    var adapter01 = ListAdapterVertical()
+
+    var RecyclerView01 = recyclerVertical.apply {
+        adapter = adapter01
+        layoutManager = manager01
+    }
+
+    var list = arrayListOf("Test 1", "Test 2", "Test 3", "Test 4")
+    var manager02 = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+    var adapter02 = ListAdapterHorizontal(list)
+
+    var RecyclerView02 = recyclerHorizon.apply {
+        adapter = adapter02
+        layoutManager = manager02
+    }
 
     //start : qr code scan
     private val barcodeLauncher = registerForActivityResult(
@@ -84,25 +101,6 @@ class MainActivity : AppCompatActivity() {
         binding.readQR.setOnClickListener {
             onScanButtonClicked()
         }
-
-        // start : recycler View
-        var manager01 = LinearLayoutManager(this)
-        var adapter01 = ListAdapterVertical()
-
-        var RecyclerView01 = binding.recyclerVertical.apply {
-            adapter = adapter01
-            layoutManager = manager01
-        }
-
-        var list = arrayListOf("Test 1", "Test 2", "Test 3", "Test 4")
-        var manager02 = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        var adapter02 = ListAdapterHorizontal(list)
-
-        var RecyclerView02 = binding.recyclerHorizon.apply {
-            adapter = adapter02
-            layoutManager = manager02
-        }
-        //end : recycler View
 
     }
     //end onCreate

@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af0fcde1-8a6b-4639-9952-ef9f02fd3006" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBDA/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/IBDA/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/ListAdapterHorizontal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/ListAdapterHorizontal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/ListAdapterVertical.kt" beforeDir="false" afterPath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/ListAdapterVertical.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/IBDA/app/src/main/java/graduation/project/dongyang/el/ibda/MainActivity.kt" afterDir="false" />
-    </list>
+    <list default="true" id="af0fcde1-8a6b-4639-9952-ef9f02fd3006" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

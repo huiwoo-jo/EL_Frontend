@@ -7,14 +7,39 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context="graduation.project.dongyang.el.ibda.MainActivity">
 
-    <Button
-        android:id="@+id/btnMember"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/member"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="42dp" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="@string/app_name" />
+    <!-- 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="30dp">
+        <Button
+            android:id="@+id/btnMember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_30"
+            android:layout_margin="10dp"
+            android:text="@string/member" />
+        <Button
+            android:id="@+id/btnNotMember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_30"
+            android:layout_margin="10dp"
+            android:text="@string/nonMember" />
+    </LinearLayout>
 
 </LinearLayout>

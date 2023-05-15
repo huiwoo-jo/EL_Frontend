@@ -5,6 +5,7 @@
     <string name="Notice_QR_login">QR 코드로 로그인</string>
     <string name="Login">로그인</string>
     <string name="member">회원</string>
+    <string name="nonMember">비회원</string>
     <string name="errorLogin">로그인 실패! \n 아이디 혹은 비밀번호를 확인해주세요.</string>
     <string name="noticeBack">회원이 아니신가요?</string>
 </resources>

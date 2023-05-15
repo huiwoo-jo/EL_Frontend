@@ -66,8 +66,6 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        
-
     }
     //end : OnCreate
 }

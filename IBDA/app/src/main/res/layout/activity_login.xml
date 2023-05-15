@@ -48,6 +48,18 @@
             android:textColorHint="@color/white"
             tools:ignore="TouchTargetSizeCheck" />
 
+        <TextView
+            android:id="@+id/loginError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="로그인 실패! \n 아이디 혹은 비밀번호를 확인해주세요."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:minHeight="20dp"
+            android:visibility="gone"/>
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="wrap_content"

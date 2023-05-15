@@ -4,4 +4,5 @@
     <string name="id">아이디</string>
     <string name="Notice_QR_login">QR 코드로 로그인</string>
     <string name="Login">로그인</string>
+    <string name="member">회원</string>
 </resources>

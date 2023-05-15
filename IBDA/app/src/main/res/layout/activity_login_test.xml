@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainBG"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="graduation.project.dongyang.el.ibda.LoginTest">
+
+    <TextView
+        android:id="@+id/printID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원 이름"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="돌아가기"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="42dp" />
+
+</LinearLayout>

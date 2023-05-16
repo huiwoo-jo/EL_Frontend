@@ -3,10 +3,14 @@ package graduation.project.dongyang.el.ibda
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kr.project.dongyang.EL.IBDA.R
@@ -75,11 +79,11 @@ class MainClothes : AppCompatActivity() {
                 finish()
             }
             R.id.action_info -> {
-                Toast.makeText(applicationContext, "팝업 구현 예정", Toast.LENGTH_LONG).show()
+                val popup = PopupFragment()
+                popup.show(supportFragmentManager, "popup")
             }
 
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

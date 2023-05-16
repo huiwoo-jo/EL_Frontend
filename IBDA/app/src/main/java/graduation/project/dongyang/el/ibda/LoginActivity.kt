@@ -20,8 +20,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val intent = Intent(this, LoginTest::class.java)
+        val intent = Intent(this, MainClothes::class.java)
         var errorCont = 0
+
+        //home
+        binding.btnIBDA.setOnClickListener {
+            val home = Intent(this, MainActivity::class.java)
+            startActivity(home)
+            finish()
+        }
 
         //button click
         binding.btnLogin.setOnClickListener{
@@ -62,6 +69,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnNotMember.setOnClickListener{
             //비회원으로 시작
+            intent.putExtra("id", "비회원")
             startActivity(intent)
             finish()
         }

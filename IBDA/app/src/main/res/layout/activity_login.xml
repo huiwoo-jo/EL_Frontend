@@ -9,6 +9,17 @@
     android:background="@drawable/background_login"
     tools:context="graduation.project.dongyang.el.ibda.LoginActivity">
 
+    <!--로고-->
+    <TextView
+        android:id="@+id/btnIBDA"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="50dp" />
+
     <!-- 로그인 -->
     <LinearLayout
         android:layout_width="match_parent"

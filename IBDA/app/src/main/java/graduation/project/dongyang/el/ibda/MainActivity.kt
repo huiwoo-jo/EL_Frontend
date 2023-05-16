@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         binding.btnNotMember.setOnClickListener{
-            val cloth = Intent(this, LoginTest::class.java)
+            val cloth = Intent(this, MainClothes::class.java)
+            cloth.putExtra("id", "비회원")
             startActivity(cloth)
             finish()
         }

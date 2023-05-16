@@ -22,15 +22,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="graduation.project.dongyang.el.ibda.Toolbar"
+            android:name="graduation.project.dongyang.el.ibda.ItemCloth"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.LoginTest"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:name="graduation.project.dongyang.el.ibda.MainClothes"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.Toolbar"
+            android:exported="false" />
         <activity
             android:name="graduation.project.dongyang.el.ibda.LoginActivity"
             android:exported="false">

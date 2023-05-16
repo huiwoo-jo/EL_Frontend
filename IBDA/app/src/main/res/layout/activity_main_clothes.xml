@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainBG"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="graduation.project.dongyang.el.ibda.LoginTest">
+    android:orientation="vertical"
+    tools:context="graduation.project.dongyang.el.ibda.MainClothes">
 
     <TextView
         android:id="@+id/printID"
@@ -15,8 +13,15 @@
         android:layout_height="wrap_content"
         android:text="회원 이름"/>
 
+    <!-- 리사이클러뷰 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <Button
-        android:id="@+id/back"
+        android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="돌아가기"

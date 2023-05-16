@@ -48,10 +48,9 @@ class MainClothes : AppCompatActivity() {
             Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
             Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
             )
-        val rvCloth = findViewById<RecyclerView>(R.id.rv_profile)
+        val rvCloth = binding.rvCloth
         rvCloth.layoutManager = GridLayoutManager(this,3)
         rvCloth.setHasFixedSize(true)
-
         rvCloth.adapter = ClothAdapter(profileList)
 
     }

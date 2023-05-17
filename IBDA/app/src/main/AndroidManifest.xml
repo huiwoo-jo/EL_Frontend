@@ -22,6 +22,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name="graduation.project.dongyang.el.ibda.ClothDetail"
+            android:exported="false" />
+        <activity
             android:name="graduation.project.dongyang.el.ibda.ItemCloth"
             android:exported="false" />
         <activity
@@ -43,10 +46,10 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!-- 홈 런처 만들때 필요한 선언-->
+                <!-- 홈 런처 만들때 필요한 선언 -->
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.HOME" />
-                <!-- 홈 런처 만들때 필요한 선언-->
+                <!-- 홈 런처 만들때 필요한 선언 -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

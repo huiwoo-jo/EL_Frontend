@@ -48,6 +48,13 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <!-- 비밀번호 -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white">
         <EditText
             android:id="@+id/inputPwd"
             android:layout_width="match_parent"
@@ -62,6 +69,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- 로그인을 실패할 경우 안내 -->
         <TextView

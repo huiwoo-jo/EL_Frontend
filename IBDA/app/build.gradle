@@ -49,4 +49,7 @@ dependencies {
 
     //mvvm
     implementation 'androidx.activity:activity-ktx:1.7.1'
+
+    //의류 이미지 슬라이더
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="graduation.project.dongyang.el.ibda.ClothDetail">
+    tools:context="graduation.project.dongyang.el.ibda.DetailClothes">
 
     <!-- 툴바 -->
     <androidx.appcompat.widget.Toolbar

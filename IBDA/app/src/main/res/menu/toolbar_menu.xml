@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_home"
         android:title="홈 화면"
-        android:icon="@drawable/ic_home_24"
+        android:icon="@drawable/ic_home_24_white"
         app:showAsAction="always" />
     <item android:id="@+id/action_info"
         android:title="도움말"

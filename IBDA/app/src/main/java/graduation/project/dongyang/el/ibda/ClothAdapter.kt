@@ -18,7 +18,7 @@ class ClothAdapter (private val profileList: ArrayList<Cloth>) : RecyclerView.Ad
             itemView.setOnClickListener{
                 val curPos : Int = absoluteAdapterPosition
                 val profile: Cloth = profileList.get(curPos)
-                Toast.makeText(parent.context, "이름 : ${profile.name}\n직업 : ${profile.job}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(parent.context, "의상 : ${profile.name}\n가격 : ${profile.job}", Toast.LENGTH_SHORT).show()
             }
         } //class CustomViewHolder 에 view를 담아서 생성함.
     }

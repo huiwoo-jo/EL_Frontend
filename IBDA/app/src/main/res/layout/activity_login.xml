@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login"
+    android:background="@drawable/background_fill_round"
     tools:context="graduation.project.dongyang.el.ibda.LoginActivity">
 
     <!--로고-->
@@ -143,7 +143,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:src="@drawable/ic_baseline_qr_code_24"
+            android:src="@drawable/ic_baseline_qr_code_24_white"
             tools:ignore="Suspicious0dp"
             android:contentDescription="@string/Notice_QR_login"/>
         <!-- QR 로그인 안내 -->

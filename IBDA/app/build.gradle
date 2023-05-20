@@ -1,9 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    //hilt
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -16,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "kr.project.dongyang.EL.IBDA"
-        minSdk 24
+        minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -41,25 +38,18 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0.'
-    implementation 'androidx.appcompat:appcompat:1.3.0' //1.6.1 version error
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.core:core-ktx:1.8.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1' //1.6.1 version error
+    implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    //Zxing : QR Code
-    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
-
     //mvvm
-    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.7.1'
 
-    //hilt
-    implementation 'com.google.dagger:hilt-android:2.44.2'
-    kapt 'com.google.dagger:hilt-compiler:2.44.2'
-}
-
-kapt {
-    correctErrorTypes true
+    //의류 이미지 슬라이더
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

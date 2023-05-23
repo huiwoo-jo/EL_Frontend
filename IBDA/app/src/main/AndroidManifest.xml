@@ -22,6 +22,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name="graduation.project.dongyang.el.ibda.MainActivity"
+            android:exported="false" />
+        <activity
             android:name="graduation.project.dongyang.el.ibda.DetailClothes"
             android:exported="false" />
         <activity
@@ -38,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="graduation.project.dongyang.el.ibda.MainActivity"
+            android:name="graduation.project.dongyang.el.ibda.LoadingActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

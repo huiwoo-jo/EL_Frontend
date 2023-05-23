@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
@@ -87,12 +86,6 @@ class MainClothes : AppCompatActivity() {
                 }
             }while (str!=null)
 
-            // 전체가 객체로 묶여있기 때문에 객체형태로 가져옴
-            /*
-            val root = JSONObject(buf.toString())
-            val response = root.getJSONObject("response").getJSONObject("body").getJSONObject("items")
-            val item = response.getJSONArray("item") // 객체 안에 있는 item이라는 이름의 리스트를 가져옴
-             */
             val item = JSONArray(buf.toString())
 
             // 화면에 출력
@@ -104,10 +97,9 @@ class MainClothes : AppCompatActivity() {
                     // 쪽수 별로 데이터를 읽는다.
                     val jObject = item.getJSONObject(i)
 
-
                     clothList.add(ClothesResponseItem(JSON_Parse(jObject,"category"),
-                         JSON_Parse(jObject,"id"),
-                        R.drawable.dongyang_logo_png,
+                        JSON_Parse(jObject,"id"),
+                        JSON_Parse(jObject,"image"),
                         JSON_Parse(jObject,"name"),
                         JSON_Parse(jObject,"price")))
                 }

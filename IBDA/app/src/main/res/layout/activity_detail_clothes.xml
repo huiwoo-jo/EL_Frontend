@@ -27,37 +27,45 @@
 
 
         <!-- 기본 정보 레이아웃 박스 -->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@color/material_dynamic_neutral95">
 
-            <EditText
-                android:id="@+id/cloth_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_cloth_name"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/cloth_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_cloth_price"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cloth_name" />
+                <TextView
+                    android:id="@+id/cloth_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_cloth_name"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/cloth_cate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_cloth_cate"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cloth_price" />
+                <TextView
+                    android:id="@+id/cloth_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_cloth_price"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cloth_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_cloth_cate"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
 
             <ImageButton
                 android:id="@+id/btn_favorite"
@@ -65,13 +73,23 @@
                 android:layout_height="48dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/unselected_favorite"
-                app:layout_constraintBottom_toBottomOf="@+id/cloth_cate"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cloth_price" />
+                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.843" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <!-- 뷰 페이저 임시 변환
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/cloth_image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+            -->
+
+        <ImageView
             android:id="@+id/cloth_image_slider"
             android:layout_width="match_parent"
             android:layout_height="400dp" />

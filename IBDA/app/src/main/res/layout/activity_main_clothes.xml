@@ -63,6 +63,12 @@
             android:background="#837676"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/payment_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="결제" />
 
             <Button
                 android:id="@+id/recommend_button"
@@ -71,13 +77,19 @@
                 android:layout_weight="1"
                 android:text="추천" />
 
-
             <Button
-                android:id="@+id/payment_button"
+                android:id="@+id/ar_button"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="결제" />
+                android:text="AR" />
+
+            <Button
+                android:id="@+id/experience_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="체험" />
 
         </LinearLayout>
 

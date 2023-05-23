@@ -1,27 +1,30 @@
 package graduation.project.dongyang.el.ibda
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatDrawableManager.preload
+import androidx.appcompat.view.menu.MenuView.ItemView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
-import kr.project.dongyang.EL.IBDA.databinding.ActivityItemClothBinding
 
 class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : RecyclerView.Adapter<ClothAdapter.CustomViewHolder>(){
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothAdapter.CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false) //(parent.context) => 연결될 Activity의 context를 가져오는 것. 즉 MainActivity의 경우 MainActivity의 모든 context가 됨
+
+
         return CustomViewHolder(view).apply {
             itemView.setOnClickListener{
                 val curPos : Int = absoluteAdapterPosition
-                val cloth: ClothesResponseItem = clothList.get(curPos)
-                Toast.makeText(parent.context, "의상 : ${cloth.name}\n가격 : ${cloth.price}", Toast.LENGTH_SHORT).show()
+                val cloth: ClothesResponseItem = clothList[curPos]
             }
         } //class CustomViewHolder 에 view를 담아서 생성함.
     }
@@ -46,13 +49,17 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
             name.text = imageData.name
             price.text = imageData.price
         }
+
+        holder.image.setOnClickListener{
+            var intent = Intent(it.context, DetailClothes::class.java)
+            intent.putExtra("id", imageData.id)
+            it.context.startActivity(intent)
+        }
     }
 
     class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.tv_image)
         val name = itemView.findViewById<TextView>(R.id.tv_name)
         val price  = itemView.findViewById<TextView>(R.id.tv_price)
-
     }
-
 }

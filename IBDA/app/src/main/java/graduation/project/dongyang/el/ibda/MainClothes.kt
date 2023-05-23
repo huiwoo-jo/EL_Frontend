@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
 import org.json.JSONArray

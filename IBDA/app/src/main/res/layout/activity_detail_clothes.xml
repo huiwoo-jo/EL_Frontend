@@ -26,7 +26,6 @@
         android:orientation="vertical">
 
 
-
         <!-- 기본 정보 레이아웃 박스 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

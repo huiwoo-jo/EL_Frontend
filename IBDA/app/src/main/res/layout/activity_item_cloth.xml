@@ -8,7 +8,7 @@
     tools:context="graduation.project.dongyang.el.ibda.ItemCloth">
 
         <ImageView
-            android:id="@+id/id_profile"
+            android:id="@+id/tv_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
@@ -32,7 +32,7 @@
             app:layout_constraintTop_toBottomOf="@+id/id_profile" />
 
         <TextView
-            android:id="@+id/tv_job"
+            android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

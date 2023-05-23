@@ -2,6 +2,8 @@ package graduation.project.dongyang.el.ibda
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
 
 class ItemCloth : AppCompatActivity() {

@@ -3,25 +3,25 @@ package graduation.project.dongyang.el.ibda
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
-import androidx.fragment.app.DialogFragment
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
-import kr.project.dongyang.EL.IBDA.databinding.ActivityLoginBinding
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
-import android.widget.Toolbar as Toolbar1
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.URL
 
 class MainClothes : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainClothesBinding.inflate(layoutInflater)
     }
+
+    val clothList :ArrayList<ClothesResponseItem> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,32 +35,10 @@ class MainClothes : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) //액션바에 표시되는 제목의 표시유무를 설정합니다. false로 해야 custom한 툴바의 이름이 화면에 보이게 됩니다.
         binding.toolbar.title = "의상 : " + userID.toString()
 
-        //의상 출력
-        val profileList = arrayListOf(
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            Cloth(R.drawable.el_logo_png, "상의1","10,000"),
-            Cloth(R.drawable.ibda_logo_png, "상의2","10,000"),
-            Cloth(R.drawable.dongyang_logo_png, "상의3","10,000"),
-            )
-        val rvCloth = binding.rvCloth
-        rvCloth.layoutManager = GridLayoutManager(this,3)
-        rvCloth.setHasFixedSize(true)
-        rvCloth.adapter = ClothAdapter(profileList)
-
+        //thread
+        val thread = NetworkThread()
+        thread.start()
+        thread.join()
     }
 
     //액션버튼 메뉴 액션바에 집어 넣기
@@ -86,4 +64,73 @@ class MainClothes : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    // 의상 출력
+    inner class NetworkThread: Thread(){
+        override fun run() {
+            // API 정보를 가지고 있는 주소
+            val site = "http://ibdabackend.iptime.org:5001/clothes"
+
+            val url = URL(site)
+            val conn = url.openConnection()
+            val input = conn.getInputStream()
+            val isr = InputStreamReader(input)
+            // br: 라인 단위로 데이터를 읽어오기 위해서 만듦
+            val br = BufferedReader(isr)
+
+            // Json 문서는 일단 문자열로 데이터를 모두 읽어온 후, Json에 관련된 객체를 만들어서 데이터를 가져옴
+            var str: String? = null
+            val buf = StringBuffer()
+            do{
+                str = br.readLine()
+                if(str!=null){
+                    buf.append(str)
+                }
+            }while (str!=null)
+
+            // 전체가 객체로 묶여있기 때문에 객체형태로 가져옴
+            /*
+            val root = JSONObject(buf.toString())
+            val response = root.getJSONObject("response").getJSONObject("body").getJSONObject("items")
+            val item = response.getJSONArray("item") // 객체 안에 있는 item이라는 이름의 리스트를 가져옴
+             */
+            val item = JSONArray(buf.toString())
+
+            // 화면에 출력
+            runOnUiThread {
+                // 출력할 리스트
+
+                // 페이지 수만큼 반복하여 데이터를 불러온다.
+                for(i in 0 until item.length()){
+                    // 쪽수 별로 데이터를 읽는다.
+                    val jObject = item.getJSONObject(i)
+
+
+                    clothList.add(ClothesResponseItem(JSON_Parse(jObject,"category"),
+                         JSON_Parse(jObject,"id"),
+                        R.drawable.dongyang_logo_png,
+                        JSON_Parse(jObject,"name"),
+                        JSON_Parse(jObject,"price")))
+                }
+
+                val rvCloth = binding.rvCloth
+                rvCloth.layoutManager = GridLayoutManager(this@MainClothes,3)
+                rvCloth.setHasFixedSize(true)
+                rvCloth.adapter = ClothAdapter(clothList)
+            }
+        }
+
+        // 함수를 통해 데이터를 불러온다.
+        fun JSON_Parse(obj:JSONObject, data : String): String {
+
+            // 원하는 정보를 불러와 리턴받고 없는 정보는 캐치하여 "없습니다."로 리턴받는다.
+            return try {
+
+                obj.getString(data)
+
+            } catch (e: Exception) {
+                "없습니다."
+            }
+        }
+    }
+
 }

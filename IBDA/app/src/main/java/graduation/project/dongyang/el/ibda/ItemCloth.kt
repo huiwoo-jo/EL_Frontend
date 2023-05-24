@@ -2,11 +2,16 @@ package graduation.project.dongyang.el.ibda
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kr.project.dongyang.EL.IBDA.R
+import kr.project.dongyang.EL.IBDA.databinding.ActivityItemClothBinding
 
 class ItemCloth : AppCompatActivity() {
+    private val binding by lazy {
+        ActivityItemClothBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_item_cloth)
+        setContentView(binding.root)
+
     }
 }

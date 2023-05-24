@@ -1,8 +1,11 @@
 package graduation.project.dongyang.el.ibda
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,18 +18,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnMember.setOnClickListener{
-            val login = Intent(this, LoginActivity::class.java)
-            startActivity(login)
-            finish()
-        }
-        binding.btnNotMember.setOnClickListener{
-            val cloth = Intent(this, MainClothes::class.java)
-            cloth.putExtra("id", "비회원")
-            startActivity(cloth)
+        binding.btnMember.setOnClickListener(ButtonListener())
+        binding.btnNotMember.setOnClickListener(ButtonListener())
+
+        Handler().postDelayed({
+            val loading = Intent(this, LoadingActivity::class.java)
+            startActivity(loading)
+        },300000)
+
+    }
+    //end onCreate
+
+    inner class ButtonListener: View.OnClickListener {
+        override fun onClick(v: View?) {
+            var intent = Intent()
+
+            when (v?.id) {
+                R.id.btnMember->{
+                    intent=Intent(this@MainActivity, LoginActivity::class.java)
+                }
+                R.id.btnNotMember-> {
+                    intent = Intent(this@MainActivity, MainClothes::class.java)
+                    intent.putExtra("id", "비회원")
+                }
+            }
+            startActivity(intent)
             finish()
         }
     }
-    //end onCreate
+
 
 }

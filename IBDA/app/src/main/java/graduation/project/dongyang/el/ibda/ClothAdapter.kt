@@ -15,13 +15,11 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothAdapter.CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false) //(parent.context) => 연결될 Activity의 context를 가져오는 것. 즉 MainActivity의 경우 MainActivity의 모든 context가 됨
-
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false)
 
         return CustomViewHolder(view).apply {
             itemView.setOnClickListener{
-                val curPos : Int = absoluteAdapterPosition
-                val cloth: ClothesResponseItem = clothList[curPos]
+                absoluteAdapterPosition
             }
         } //class CustomViewHolder 에 view를 담아서 생성함.
     }
@@ -55,8 +53,8 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
     }
 
     class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val image = itemView.findViewById<ImageView>(R.id.tv_image)
-        val name = itemView.findViewById<TextView>(R.id.tv_name)
-        val price  = itemView.findViewById<TextView>(R.id.tv_price)
+        val image: ImageView = itemView.findViewById<ImageView>(R.id.tv_image)
+        val name: TextView = itemView.findViewById<TextView>(R.id.tv_name)
+        val price: TextView = itemView.findViewById<TextView>(R.id.tv_price)
     }
 }

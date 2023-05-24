@@ -14,9 +14,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-=======
-import androidx.recyclerview.widget.GridLayoutManager
 
 import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
@@ -101,11 +98,6 @@ class MainClothes : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-}
-
-
-
-=======
     // 의상 출력
     inner class NetworkThread: Thread(){
         override fun run() {

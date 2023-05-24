@@ -8,10 +8,7 @@
     tools:context="graduation.project.dongyang.el.ibda.ItemCloth">
 
         <ImageView
-
-            android:id="@+id/footer_profile"
             android:id="@+id/tv_image"
-
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"

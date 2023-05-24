@@ -55,6 +55,13 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
     }
 
     class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+
+        val gender: ImageView = itemView.findViewById<ImageView>(R.id.footer_profile) //성별
+        val name: TextView = itemView.findViewById<TextView>(R.id.tv_name) //이름
+        val job: TextView = itemView.findViewById<TextView>(R.id.tv_job) //직업
+    }
+}
+=======
         val image = itemView.findViewById<ImageView>(R.id.tv_image)
         val name = itemView.findViewById<TextView>(R.id.tv_name)
         val price  = itemView.findViewById<TextView>(R.id.tv_price)

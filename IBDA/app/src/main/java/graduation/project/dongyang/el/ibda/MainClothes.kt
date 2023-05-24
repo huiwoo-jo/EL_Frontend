@@ -5,7 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+=======
+import androidx.recyclerview.widget.GridLayoutManager
+
 import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
 import org.json.JSONArray
@@ -33,12 +45,38 @@ class MainClothes : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) //액션바에 표시되는 제목의 표시유무를 설정합니다. false로 해야 custom한 툴바의 이름이 화면에 보이게 됩니다.
         binding.toolbar.title = "의상 : " + userID.toString()
 
+        //의상 출력
+        val footerProfileList = arrayListOf(
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2", 20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+        )
+        val footerRv = binding.footerRv
+        footerRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
+        footerRv.setHasFixedSize(true)
+        footerRv.adapter = ClothFooterAdapter(footerProfileList)
+        
         //thread
         val thread = NetworkThread()
         thread.start()
         thread.join()
-    }
 
+    }
     //액션버튼 메뉴 액션바에 집어 넣기
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
@@ -62,6 +100,12 @@ class MainClothes : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+}
+
+
+
+=======
     // 의상 출력
     inner class NetworkThread: Thread(){
         override fun run() {

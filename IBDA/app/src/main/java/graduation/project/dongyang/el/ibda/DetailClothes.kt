@@ -110,7 +110,7 @@ class DetailClothes : AppCompatActivity() {
             runOnUiThread {
                 // 의류 번호
                 val id = intent.getStringExtra("id")
-                val num = id?.toInt()?.minus(1)
+                val num = id?.toInt()
 
                 // 페이지 id의 데이터를 불러온다.
                 val jObject = num?.let { item.getJSONObject(it) }

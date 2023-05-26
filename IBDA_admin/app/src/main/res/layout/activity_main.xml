@@ -41,6 +41,7 @@
             android:layout_gravity="center">
 
             <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+                android:id="@+id/main_btn_members"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:maxHeight="50dp"
@@ -54,6 +55,7 @@
             </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
 
             <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+                android:id="@+id/main_btn_clothes"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:maxHeight="50dp"
@@ -67,6 +69,7 @@
             </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
 
             <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+                android:id="@+id/main_btn_inventory"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:maxHeight="50dp"
@@ -80,7 +83,7 @@
             </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
 
             <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
-                android:id="@+id/setting"
+                android:id="@+id/main_btn_setting"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
                 android:maxHeight="50dp"

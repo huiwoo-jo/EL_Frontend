@@ -3,4 +3,5 @@
     <string name="ibda">IBDA</string>
     <string name="password">관리자 비밀번호</string>
     <string name="id">관리자 번호</string>
+    <string name="admin">ADMIN</string>
 </resources>

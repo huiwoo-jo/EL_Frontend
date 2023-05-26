@@ -102,14 +102,15 @@
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="관리자 로그인"
             android:textSize="20dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:paddingHorizontal="25dp"
-            android:background="@drawable/button_round_blue"/>
+            android:background="@drawable/button_ripple_blue"/>
     </LinearLayout>
 </LinearLayout>

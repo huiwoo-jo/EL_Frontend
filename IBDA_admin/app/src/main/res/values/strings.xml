@@ -1,7 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IBDA_admin</string>
     <string name="ibda">IBDA</string>
     <string name="password">관리자 비밀번호</string>
     <string name="id">관리자 번호</string>
     <string name="admin">ADMIN</string>
+    <string name="main_btn_members">회원 관리</string>
+    <string name="main_btn_clothes">의류 관리</string>
+    <string name="main_btn_inventory">재고 관리</string>
+    <string name="main_btn_setting">계정</string>
 </resources>

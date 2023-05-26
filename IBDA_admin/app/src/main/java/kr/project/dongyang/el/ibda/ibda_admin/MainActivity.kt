@@ -1,6 +1,7 @@
 package kr.project.dongyang.el.ibda.ibda_admin
 
 import android.content.Intent
+import android.icu.util.Measure
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_home_24_white)  // 왼쪽 버튼 아이콘 설정
+
     }
 
     //액션버튼 메뉴 액션바에 집어 넣기

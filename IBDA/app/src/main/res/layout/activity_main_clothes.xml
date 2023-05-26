@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="graduation.project.dongyang.el.ibda.MainClothes">
-
+o
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

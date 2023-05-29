@@ -42,23 +42,35 @@ class MainClothes : AppCompatActivity() {
 
         val recyclerView1: RecyclerView = findViewById(R.id.rv_cloth)
         val recyclerView2: RecyclerView = findViewById(R.id.pantsRv)
+        val recyclerView3: RecyclerView = findViewById(R.id.recommendRv)
         val button1: Button = findViewById(R.id.tops_button)
         val button2: Button = findViewById(R.id.bottoms_button)
+        val button3: Button = findViewById(R.id.recommend_button)
 
-// 초기 상태 설정: recyclerView1은 보이고, recyclerView2는 숨김
+        // 초기 상태 설정
         recyclerView1.visibility = View.VISIBLE
         recyclerView2.visibility = View.GONE
+        recyclerView3.visibility = View.GONE
 
         button1.setOnClickListener {
-            // 버튼1을 클릭하면 recyclerView1을 보이게 하고, recyclerView2를 숨김
+            // 버튼1을 클릭하면 recyclerView1을 보이게 하고, recyclerView2,3를 숨김
             recyclerView1.visibility = View.VISIBLE
             recyclerView2.visibility = View.GONE
+            recyclerView3.visibility = View.GONE
         }
 
         button2.setOnClickListener {
-            // 버튼2를 클릭하면 recyclerView2를 보이게 하고, recyclerView1을 숨김
+            // 버튼2를 클릭하면 recyclerView2를 보이게 하고, recyclerView1,3을 숨김
             recyclerView2.visibility = View.VISIBLE
             recyclerView1.visibility = View.GONE
+            recyclerView3.visibility = View.GONE
+        }
+
+        button3.setOnClickListener {
+            // 버튼2를 클릭하면 recyclerView2를 보이게 하고, recyclerView1,3을 숨김
+            recyclerView2.visibility = View.GONE
+            recyclerView1.visibility = View.GONE
+            recyclerView3.visibility = View.VISIBLE
         }
 
         //의상 출력
@@ -148,6 +160,39 @@ class MainClothes : AppCompatActivity() {
         pantsRv.setHasFixedSize(true)
         pantsRv.adapter = ClothPantsAdapter(pantsClothList)
 
+        val recommendClothList = arrayListOf(
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",50000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.el_logo_png, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","추천3",30000),
+        )
+        val recommendRv = binding.recommendRv
+        recommendRv.layoutManager = GridLayoutManager(this@MainClothes,3)
+        recommendRv.setHasFixedSize(true)
+        recommendRv.adapter = ClothRecommendAdapter(recommendClothList)
 
         //thread
         val thread = NetworkThread()

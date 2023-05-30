@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:id="@+id/tv_background"
     android:background="@drawable/button_ripple_round_white"
     android:layout_margin="10dp"
     android:padding="5dp"
-    tools:context=".ItemCloth">
+    tools:context=".sc_clothes.ItemCloth">
 
     <TextView
         android:id="@+id/tv_id"
@@ -110,8 +111,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="right">
-        <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
-            android:id="@+id/btnClothEdit"
+        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
+            android:id="@+id/tv_btnClothEdit"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/button_ripple_round_blue"
@@ -119,8 +120,8 @@
             android:layout_marginHorizontal="5dp"
             android:text="의상 수정" />
 
-        <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
-            android:id="@+id/btnClothDelete"
+        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
+            android:id="@+id/tv_btnClothDelete"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/button_ripple_round_blue"

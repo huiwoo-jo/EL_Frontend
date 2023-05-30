@@ -1,4 +1,4 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import kr.project.dongyang.el.ibda.ibda_admin.sc_clothes.ClothAdapter
+import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesResponseItem
+import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityMainClothesBinding
 import org.json.JSONArray
 import org.json.JSONObject
@@ -15,7 +18,7 @@ import java.io.InputStreamReader
 import java.net.URL
 
 
-class MainClothes : AppCompatActivity() {
+class MainClothesActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainClothesBinding.inflate(layoutInflater)
     }
@@ -69,12 +72,12 @@ class MainClothes : AppCompatActivity() {
 
             when (v?.id) {
                 R.id.btnAddClothes ->{
-                    intent = Intent(this@MainClothes, MainClothes::class.java)
+                    intent = Intent(this@MainClothesActivity, ClothesAddActivity::class.java)
                 }
                 R.id.btnUpPage -> {
 
                 }
-                R.id.btnDownPage->{
+                R.id.btnDownPage ->{
                 }
             }
             startActivity(intent)
@@ -85,6 +88,7 @@ class MainClothes : AppCompatActivity() {
     // 의상 출력
     inner class NetworkThread: Thread(){
         override fun run() {
+
             // API 정보를 가지고 있는 주소
             val site = "http://ibdabackend.iptime.org:5001/clothes"
 
@@ -116,15 +120,17 @@ class MainClothes : AppCompatActivity() {
                     // 쪽수 별로 데이터를 읽는다.
                     val jObject = item.getJSONObject(i)
 
-                    clothList.add(ClothesResponseItem(JSON_Parse(jObject,"category"),
+                    clothList.add(
+                        ClothesResponseItem(JSON_Parse(jObject,"category"),
                         JSON_Parse(jObject,"id"),
                         JSON_Parse(jObject,"image"),
                         JSON_Parse(jObject,"name"),
-                        JSON_Parse(jObject,"price")))
+                        JSON_Parse(jObject,"price"))
+                    )
                 }
 
                 val rvCloth = binding.rvCloth
-                rvCloth.layoutManager = GridLayoutManager(this@MainClothes,1)
+                rvCloth.layoutManager = GridLayoutManager(this@MainClothesActivity,1)
                 rvCloth.setHasFixedSize(true)
                 rvCloth.adapter = ClothAdapter(clothList)
             }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -40,7 +40,7 @@
             android:columnCount="2"
             android:layout_gravity="center">
 
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
                 android:id="@+id/main_btn_members"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
@@ -52,9 +52,9 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/button_ripple_round_blue">
-            </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
+            </kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton>
 
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
                 android:id="@+id/main_btn_clothes"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
@@ -66,9 +66,9 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/button_ripple_round_blue">
-            </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
+            </kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton>
 
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
                 android:id="@+id/main_btn_inventory"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
@@ -80,9 +80,9 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/button_ripple_round_blue">
-            </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
+            </kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton>
 
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
                 android:id="@+id/main_btn_setting"
                 android:layout_width="0dp"
                 android:layout_columnWeight="1"
@@ -94,7 +94,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:background="@drawable/button_ripple_round_blue">
-            </kr.project.dongyang.el.ibda.ibda_admin.SquareButton>
+            </kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton>
         </GridLayout>
     </LinearLayout>
 

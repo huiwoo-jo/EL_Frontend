@@ -1,11 +1,11 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityLoginBinding
-import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
             var intent = Intent()
 
             when (v?.id) {
-                R.id.btnLogin->{
+                R.id.btnLogin ->{
                     //empty error
                     val userId = binding.inputId.text.toString().trim()
                     val userPwd = binding.inputPwd.text.toString().trim()

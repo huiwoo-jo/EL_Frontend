@@ -1,13 +1,23 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.sc_clothes
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kr.project.dongyang.el.ibda.ibda_admin.R
+import kr.project.dongyang.el.ibda.ibda_admin.activity.ClothesDetailsActivity
+import kr.project.dongyang.el.ibda.ibda_admin.activity.ClothesEditActivity
+import kr.project.dongyang.el.ibda.ibda_admin.activity.MainClothesActivity
+import kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
+import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesResponseItem
 
 class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : RecyclerView.Adapter<ClothAdapter.CustomViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -42,19 +52,27 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
             price.text = imageData.price
         }
 
-        /*
-        holder.image.setOnClickListener{
-            var intent = Intent(it.context, DetailClothes::class.java)
+
+        holder.background.setOnClickListener{
+            var intent=Intent(it.context, ClothesDetailsActivity::class.java)
             intent.putExtra("id", imageData.id)
             it.context.startActivity(intent)
         }
-         */
+
+        holder.btnEdit.setOnClickListener{
+            var intent=Intent(it.context, ClothesEditActivity::class.java)
+            intent.putExtra("id", imageData.id)
+            it.context.startActivity(intent)
+        }
     }
 
     class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+        val background :View = itemView.findViewById(R.id.tv_background)
         val id: TextView = itemView.findViewById(R.id.tv_id)
         val image: ImageView = itemView.findViewById<ImageView>(R.id.tv_image)
         val name: TextView = itemView.findViewById<TextView>(R.id.tv_name)
         val price: TextView = itemView.findViewById<TextView>(R.id.tv_price)
+
+        val btnEdit: SquareImageButton = itemView.findViewById(R.id.tv_btnClothEdit)
     }
 }

@@ -1,12 +1,12 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.activity
 
 import android.content.Intent
-import android.icu.util.Measure
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityMainBinding
 
 
@@ -62,13 +62,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.main_btn_clothes -> {
                     //메인 -> 의류 관리
-                    intent = Intent(this@MainActivity, MainClothes::class.java)
+                    intent = Intent(this@MainActivity, MainClothesActivity::class.java)
                 }
 
-                R.id.main_btn_inventory->{
+                R.id.main_btn_inventory ->{
                     // 메인 -> 재고 관리
                 }
-                R.id.main_btn_setting->{
+                R.id.main_btn_setting ->{
                     // 메인 -> 계정 관리
                 }
             }

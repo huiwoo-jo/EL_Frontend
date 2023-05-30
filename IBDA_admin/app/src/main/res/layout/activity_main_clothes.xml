@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainClothes">
+    tools:context=".activity.MainClothesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -51,21 +51,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.969">
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
                 android:id="@+id/btnAddClothes"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginVertical="3dp"
                 android:background="@drawable/button_ripple_circle_blue"
                 android:src="@drawable/ic_baseline_add_24_white" />
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
                 android:id="@+id/btnUpPage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginVertical="3dp"
                 android:background="@drawable/button_ripple_circle_blue"
                 android:src="@drawable/ic_baseline_keyboard_arrow_up_24_white" />
-            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
                 android:id="@+id/btnDownPage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

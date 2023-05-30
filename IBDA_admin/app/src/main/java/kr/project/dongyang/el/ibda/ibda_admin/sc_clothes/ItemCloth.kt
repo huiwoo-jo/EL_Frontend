@@ -1,4 +1,4 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.sc_clothes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +12,5 @@ class ItemCloth : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
     }
 }

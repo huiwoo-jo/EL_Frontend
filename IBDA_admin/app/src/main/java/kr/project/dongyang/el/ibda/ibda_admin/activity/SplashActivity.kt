@@ -1,4 +1,4 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

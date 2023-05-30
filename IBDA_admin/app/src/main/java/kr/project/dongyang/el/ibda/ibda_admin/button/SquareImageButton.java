@@ -1,19 +1,20 @@
-package kr.project.dongyang.el.ibda.ibda_admin;
+package kr.project.dongyang.el.ibda.ibda_admin.button;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.ImageButton;
 
-public class SquareButton extends androidx.appcompat.widget.AppCompatButton {
+public class SquareImageButton extends ImageButton {
 
-        public SquareButton(Context context) {
+        public SquareImageButton(Context context) {
             super(context);
         }
 
-        public SquareButton(Context context, AttributeSet attrs) {
+        public SquareImageButton(Context context, AttributeSet attrs) {
             super(context, attrs);
         }
 
-        public SquareButton(Context context, AttributeSet attrs, int defStyle) {
+        public SquareImageButton(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
         }
 

@@ -1,4 +1,4 @@
-package kr.project.dongyang.el.ibda.ibda_admin
+package kr.project.dongyang.el.ibda.ibda_admin.data
 
 data class ClothesResponseItem(
     val category: String,

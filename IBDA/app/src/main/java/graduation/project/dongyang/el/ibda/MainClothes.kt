@@ -75,9 +75,9 @@ class MainClothes : AppCompatActivity() {
 
         //의상 출력
         val footerProfileList = arrayListOf(
-            ClothFooter(R.drawable.pants2, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.top2, "브랜드2","상의2", 20000),
-            ClothFooter(R.drawable.top1, "브랜드3","상의3",30000)
+            ClothFooter(R.drawable.pants2, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.top2, "브랜드2","상의1", 20000),
+            ClothFooter(R.drawable.top1, "브랜드3","상의2",30000)
         )
         val footerRv = binding.footerRv
         footerRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)

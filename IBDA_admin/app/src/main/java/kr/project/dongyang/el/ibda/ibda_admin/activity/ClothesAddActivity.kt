@@ -1,14 +1,29 @@
 package kr.project.dongyang.el.ibda.ibda_admin.activity
 
+import android.Manifest
+import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Base64
+import android.util.Base64.NO_WRAP
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesPostItem
@@ -17,6 +32,8 @@ import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityAddClothesBind
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
 
 class ClothesAddActivity : AppCompatActivity() {
     private val binding by lazy{
@@ -24,6 +41,7 @@ class ClothesAddActivity : AppCompatActivity() {
     }
 
     val api = APIS.create()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +57,7 @@ class ClothesAddActivity : AppCompatActivity() {
         //버튼
         binding.btnClothesPost.setOnClickListener(ButtonListener())
         binding.btnClothesCancle.setOnClickListener(ButtonListener())
+        binding.btnGallery.setOnClickListener(ButtonListener())
 
     }
     //액션버튼 메뉴 액션바에 집어 넣기
@@ -65,57 +84,65 @@ class ClothesAddActivity : AppCompatActivity() {
         override fun onClick(v: View?) {
             var intent = Intent(this@ClothesAddActivity, MainClothesActivity::class.java)
             when (v?.id) {
-                R.id.btnClothesPost ->{
+                R.id.btnClothesPost -> {
                     //Clothes등록
                     val category = binding.addClothCategory.text.toString()
                     val name = binding.addClothName.text.toString()
                     val image = binding.addClothImg.text.toString()
                     val price = Integer.parseInt(binding.addClothPrice.text.toString())
-                    val data = ClothesPostItem(category,name,image, price)
+                    val data = ClothesPostItem(category, name, image, price)
 
                     api.post_clothes(data).enqueue(object : Callback<PostResult> {
-                        override fun onResponse(call: Call<PostResult>, response: Response<PostResult>) {
-                            if(!response.body().toString().isEmpty())
-                                Toast.makeText(this@ClothesAddActivity, "의류 $name 을 등록하였습니다.", Toast.LENGTH_SHORT).show()
+                        override fun onResponse(
+                            call: Call<PostResult>,
+                            response: Response<PostResult>
+                        ) {
+                            if (!response.body().toString().isEmpty())
+                                Toast.makeText(
+                                    this@ClothesAddActivity,
+                                    "의류 $name 을 등록하였습니다.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                         }
 
                         override fun onFailure(call: Call<PostResult>, t: Throwable) {
                             // 실패
-                            Toast.makeText(this@ClothesAddActivity, "의류 $name 을 등록을 실패하였습니다.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@ClothesAddActivity,
+                                "의류 $name 을 등록을 실패하였습니다.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     })
 
                     startActivity(intent)
                     finish()
                 }
-                R.id.btnClothesCancle ->{
+
+                R.id.btnClothesCancle -> {
                     //취소 시 메인화면으로 이동
                     startActivity(intent)
                     finish()
                 }
-                R.id.btnGallery ->{
-                    intent=Intent(Intent.ACTION_PICK)
-                    intent.type = "image/*"
+
+                R.id.btnGallery -> {
+                    intent = Intent(Intent.ACTION_PICK)
+                    intent.type="image/*"
                     activityResult.launch(intent)
                 }
 
             }
+
         }
 
-        private val activityResult: ActivityResultLauncher<Intent> = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()){
-            if(it.resultCode == RESULT_OK && it.data != null){
-                val uri = it.data!!.data
-                val imageView = binding.imgClothes
-                var defaultImage = R.drawable.ibda_logo_png
-
-                Glide.with(this@ClothesAddActivity)
-                    .load(uri) // 불러올 이미지 uri
-                    .placeholder(defaultImage) // 이미지 로딩 시작하기 전 표시할 이미지
-                    .error(defaultImage) // 로딩 에러 발생 시 표시할 이미지
-                    .fallback(defaultImage) // 로드할 url 이 비어있을(null 등) 경우 표시할 이미지
-                    .into(imageView) // 이미지를 넣을 뷰
-            }
-        }
+    }
+    private val  activityResult :ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()){
+           if(it.resultCode == RESULT_OK && it.data != null ){
+               val uri = it.data!!.data
+               Glide.with(this)
+                   .load(uri)
+                   .into(binding.imgClothes)
+           }
     }
 }

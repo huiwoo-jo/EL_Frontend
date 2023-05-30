@@ -38,6 +38,7 @@
         android:layout_margin="25dp"/>
 
     <ImageView
+        android:id="@+id/imgClothes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
@@ -98,6 +99,7 @@
             android:textSize="20dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"

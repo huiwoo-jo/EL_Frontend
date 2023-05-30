@@ -27,4 +27,58 @@
             android:textStyle="bold"
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
+
+    <!-- 기본 정보 레이아웃 박스 -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/material_dynamic_neutral95">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cloth_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_cloth_name"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cloth_price"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_cloth_price"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cloth_cate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_cloth_cate"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 뷰 페이저 임시 변환
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/cloth_image_slider"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+        -->
+
+    <ImageView
+        android:id="@+id/cloth_image_slider"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
 </LinearLayout>

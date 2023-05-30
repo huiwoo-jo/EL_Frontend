@@ -8,4 +8,7 @@
     <string name="main_btn_clothes">의류 관리</string>
     <string name="main_btn_inventory">재고 관리</string>
     <string name="main_btn_setting">계정</string>
+    <string name="hint_cloth_name">의류명</string>
+    <string name="hint_cloth_price">의류가격</string>
+    <string name="hint_cloth_cate">카테고리</string>
 </resources>

@@ -143,6 +143,7 @@ class ClothesAddActivity : AppCompatActivity() {
                Glide.with(this)
                    .load(uri)
                    .into(binding.imgClothes)
+               binding.addClothImg.setText(uri.toString())
            }
     }
 }

@@ -30,16 +30,16 @@ class ClothesEditActivity : AppCompatActivity() {
         return true
     }
 
+
     //액션버튼을 눌렀을때
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.drawable.ic_baseline_home_24_white -> {
-                //안드로이드 홈화면 눌렀을 때
+        when(item.itemId){
+            android.R.id.home ->{
                 val back = Intent(this@ClothesEditActivity, MainClothesActivity::class.java)
                 startActivity(back)
                 finish()
             }
         }
-        return super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item);
     }
 }

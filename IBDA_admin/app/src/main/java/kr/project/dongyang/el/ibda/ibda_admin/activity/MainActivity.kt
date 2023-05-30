@@ -38,17 +38,17 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    //액션버튼 클릭 했을 때
+
+    //액션버튼을 눌렀을때
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.drawable.ic_baseline_home_24_white -> {
-                //안드로이드 홈화면 눌렀을 때
-                val back = Intent(this, MainActivity::class.java)
+        when(item.itemId){
+            android.R.id.home ->{
+                val back = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(back)
                 finish()
             }
         }
-        return super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item);
     }
 
     //버튼 클릭
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             when (v?.id) {
                 R.id.main_btn_members -> {
                     // 메인 -> 회원 관리
+                    intent = Intent(this@MainActivity, MainActivity::class.java)
                 }
                 R.id.main_btn_clothes -> {
                     //메인 -> 의류 관리
@@ -67,9 +68,11 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.main_btn_inventory ->{
                     // 메인 -> 재고 관리
+                    intent = Intent(this@MainActivity, MainActivity::class.java)
                 }
                 R.id.main_btn_setting ->{
                     // 메인 -> 계정 관리
+                    intent = Intent(this@MainActivity, MainActivity::class.java)
                 }
             }
             startActivity(intent)

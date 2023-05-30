@@ -3,10 +3,10 @@ package kr.project.dongyang.el.ibda.ibda_admin.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.Toast
 import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesPostItem
 import kr.project.dongyang.el.ibda.ibda_admin.data.PostResult
@@ -34,25 +34,26 @@ class ClothesAddActivity : AppCompatActivity() {
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_home_24_white)  // 왼쪽 버튼 아이콘 설정
 
         binding.btnClothesPost.setOnClickListener {
+            val intent = Intent(this@ClothesAddActivity, MainClothesActivity::class.java)
             val category = binding.addClothCategory.text.toString()
             val name = binding.addClothName.text.toString()
             val image = binding.addClothImg.text.toString()
             val price = Integer.parseInt(binding.addClothPrice.text.toString())
             val data = ClothesPostItem(category,name,image, price)
+
             api.post_clothes(data).enqueue(object : Callback<PostResult> {
                 override fun onResponse(call: Call<PostResult>, response: Response<PostResult>) {
-                    Log.d("log",response.toString())
-                    Log.d("log", response.body().toString())
                     if(!response.body().toString().isEmpty())
-                        Log.d("log","success")
+                        Toast.makeText(this@ClothesAddActivity, "의류 $name 을 등록하였습니다.", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onFailure(call: Call<PostResult>, t: Throwable) {
                     // 실패
-                    Log.d("log",t.message.toString())
-                    Log.d("log","fail")
+                    Toast.makeText(this@ClothesAddActivity, "의류 $name 을 등록을 실패하였습니다.", Toast.LENGTH_SHORT).show()
                 }
             })
+            startActivity(intent)
+            finish()
         }
 
     }
@@ -64,14 +65,13 @@ class ClothesAddActivity : AppCompatActivity() {
 
     //액션버튼을 눌렀을때
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.drawable.ic_baseline_home_24_white -> {
-                //안드로이드 홈화면 눌렀을 때
+        when(item.itemId){
+            android.R.id.home ->{
                 val back = Intent(this@ClothesAddActivity, MainClothesActivity::class.java)
                 startActivity(back)
                 finish()
             }
         }
-        return super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -28,40 +28,138 @@
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/add_cloth_category"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="카테고리 선택"
-        android:text="pants"/>
+        android:text="의류 정보를 입력해주세요."
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_margin="25dp"/>
 
-    <EditText
-        android:id="@+id/add_cloth_img"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="이미지 입력"
-        android:text="https://www.muji.com/wp-content/uploads/sites/12/2021/02/036.jpg"/>
-    <EditText
-        android:id="@+id/add_cloth_name"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="의류명 입력"
-        android:text="test"/>
-    <EditText
-        android:id="@+id/add_cloth_price"
-        android:inputType="numberDecimal"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="800"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:src="@drawable/ibda_logo_png"/>
 
-    <Button
-        android:layout_gravity="center"
-        android:id="@+id/btnClothesPost"
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="등록" />
+        android:columnCount="2"
+        android:layout_margin="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:padding="10dp"
+            android:text="의류 카테고리"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/add_cloth_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextInputLayoutStyle"
+            android:theme="@style/TextInputLayoutStyle"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:hint="카테고리 선택"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:padding="10dp"
+            android:text="이미지 선택"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/add_cloth_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextInputLayoutStyle"
+            android:theme="@style/TextInputLayoutStyle"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:hint="이미지 입력"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:padding="10dp"
+            android:text="의류명"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/add_cloth_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextInputLayoutStyle"
+            android:theme="@style/TextInputLayoutStyle"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:hint="의류명 입력"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:padding="10dp"
+            android:text="가격"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/add_cloth_price"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextInputLayoutStyle"
+            android:theme="@style/TextInputLayoutStyle"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:hint="의류 가격"
+            android:textSize="20dp"/>
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClothesPost"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/button_ripple_round_blue"
+            android:text="등록" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClothesCancle"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/button_ripple_round_blueline_white"
+            android:text="취소" />
+    </LinearLayout>
 </LinearLayout>

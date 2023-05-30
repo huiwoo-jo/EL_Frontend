@@ -23,7 +23,7 @@
             android:name=".activity.ClothesDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.ClothesAddActivity"
             android:exported="false" />
         <activity
             android:name=".sc_clothes.ItemCloth"
@@ -38,7 +38,7 @@
             android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ClothesAddActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityClothesDetailsBinding
@@ -18,6 +20,7 @@ class ClothesDetailsActivity : AppCompatActivity() {
     private val binding by lazy{
         ActivityClothesDetailsBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -28,6 +31,12 @@ class ClothesDetailsActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_home_24_white)  // 왼쪽 버튼 아이콘 설정
+
+        //버튼
+        binding.btnPrev.setOnClickListener(ButtonListener())
+        binding.btnHome.setOnClickListener(ButtonListener())
+        binding.btnEdit.setOnClickListener(ButtonListener())
+        binding.btnNext.setOnClickListener(ButtonListener())
 
         //thread
         val thread = NetworkThread()
@@ -52,8 +61,57 @@ class ClothesDetailsActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item);
     }
+    //버튼 클릭
+    inner class ButtonListener: View.OnClickListener {
+        override fun onClick(v: View?) {
+            // 의류 번호
+            val id = intent.getStringExtra("id")
+            val num = id?.toInt()
+
+            var intent = Intent()
+            when (v?.id) {
+                R.id.btnPrev -> {
+                    // 메인 -> 이전 의상
+                    if((num?.minus(1))!! <0){
+                        Toast.makeText(this@ClothesDetailsActivity, "처음 페이지입니다.", Toast.LENGTH_SHORT).show()
+                    }else if (num != null) {
+                        intent = Intent(this@ClothesDetailsActivity, ClothesDetailsActivity::class.java)
+                        intent.putExtra("id", (num-1).toString())
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+                R.id.btnHome -> {
+                    // 메인 -> 메인화면
+                    intent = Intent(this@ClothesDetailsActivity, MainClothesActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                R.id.btnEdit -> {
+                    // 메인 -> 회원 관리
+                    intent = Intent(this@ClothesDetailsActivity, ClothesEditActivity::class.java)
+                    //intent.putExtra("id", num.toString())
+                    startActivity(intent)
+                    finish()
+                }
+                R.id.btnNext -> {
+                    // 메인 -> 다음 의상
+                    if (num != null) {
+                        intent = Intent(this@ClothesDetailsActivity, ClothesDetailsActivity::class.java)
+                        intent.putExtra("id", (num+1).toString())
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+            }
+        }
+    }
 
     inner class NetworkThread: Thread(){
+        // 의류 번호
+        val id = intent.getStringExtra("id")
+        val num = id?.toInt()
+
         override fun run() {
             // API 정보를 가지고 있는 주소
             val site = "http://ibdabackend.iptime.org:5001/clothes"
@@ -79,10 +137,6 @@ class ClothesDetailsActivity : AppCompatActivity() {
 
             // 화면에 출력
             runOnUiThread {
-                // 의류 번호
-                val id = intent.getStringExtra("id")
-                val num = id?.toInt()
-
                 // 페이지 id의 데이터를 불러온다.
                 val jObject = num?.let { item.getJSONObject(it) }
                 val imageView = binding.clothImageSlider
@@ -90,6 +144,9 @@ class ClothesDetailsActivity : AppCompatActivity() {
                 val url = jObject?.let { JSON_Parse(it,"image") }
 
                 // 데이터를 적용한다.
+                if (num != null) {
+                    binding.clothId.text = "No. "+(num+1).toString()
+                }
                 binding.clothName.text = jObject?.let { JSON_Parse(it,"name") }
                 binding.clothPrice.text = jObject?.let { JSON_Parse(it,"price") }
                 binding.clothCate.text = jObject?.let { JSON_Parse(it,"category") }

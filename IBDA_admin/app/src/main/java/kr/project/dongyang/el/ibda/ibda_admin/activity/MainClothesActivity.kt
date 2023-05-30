@@ -23,7 +23,7 @@ class MainClothesActivity : AppCompatActivity() {
         ActivityMainClothesBinding.inflate(layoutInflater)
     }
 
-    val clothList :ArrayList<ClothesResponseItem> = arrayListOf()
+     val clothList :ArrayList<ClothesResponseItem> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainClothes">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue_main"
+        android:minHeight="50dp"
+        android:layout_gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin"
+            android:layout_gravity="top|center"
+            android:id="@+id/toolbar_title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cloth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.969">
+            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+                android:id="@+id/btnAddClothes"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/button_ripple_circle_blue"
+                android:src="@drawable/ic_baseline_add_24_white" />
+            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+                android:id="@+id/btnUpPage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/button_ripple_circle_blue"
+                android:src="@drawable/ic_baseline_keyboard_arrow_up_24_white" />
+            <kr.project.dongyang.el.ibda.ibda_admin.SquareImageButton
+                android:id="@+id/btnDownPage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/button_ripple_circle_blue"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24_white" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

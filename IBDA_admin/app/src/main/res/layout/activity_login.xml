@@ -111,6 +111,6 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:paddingHorizontal="25dp"
-            android:background="@drawable/button_ripple_blue"/>
+            android:background="@drawable/button_ripple_round_blue"/>
     </LinearLayout>
 </LinearLayout>

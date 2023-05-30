@@ -49,6 +49,18 @@ dependencies {
 
     //splash
     implementation 'androidx.core:core-splashscreen:1.0.0-rc01'
+
     //mvvm
     implementation 'androidx.activity:activity-ktx:1.7.1'
+
+    //api
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // 이미지로딩 라이브러리
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //의류 이미지 슬라이더
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

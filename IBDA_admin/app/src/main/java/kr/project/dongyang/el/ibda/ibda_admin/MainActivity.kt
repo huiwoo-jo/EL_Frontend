@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.main_btn_clothes -> {
                     //메인 -> 의류 관리
-                    intent = Intent(this@MainActivity, ClothesAddActivity::class.java)
+                    intent = Intent(this@MainActivity, MainClothes::class.java)
                 }
 
                 R.id.main_btn_inventory->{

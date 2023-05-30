@@ -3,15 +3,25 @@ package kr.project.dongyang.el.ibda.ibda_admin.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
 import kr.project.dongyang.el.ibda.ibda_admin.R
+import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesPostItem
+import kr.project.dongyang.el.ibda.ibda_admin.data.PostResult
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityAddClothesBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ClothesAddActivity : AppCompatActivity() {
     private val binding by lazy{
         ActivityAddClothesBinding.inflate(layoutInflater)
     }
+
+    val api = APIS.create()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -22,6 +32,29 @@ class ClothesAddActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_home_24_white)  // 왼쪽 버튼 아이콘 설정
+
+        binding.btnClothesPost.setOnClickListener {
+            val category = binding.addClothCategory.text.toString()
+            val name = binding.addClothName.text.toString()
+            val image = binding.addClothImg.text.toString()
+            val price = Integer.parseInt(binding.addClothPrice.text.toString())
+            val data = ClothesPostItem(category,name,image, price)
+            api.post_clothes(data).enqueue(object : Callback<PostResult> {
+                override fun onResponse(call: Call<PostResult>, response: Response<PostResult>) {
+                    Log.d("log",response.toString())
+                    Log.d("log", response.body().toString())
+                    if(!response.body().toString().isEmpty())
+                        Log.d("log","success")
+                }
+
+                override fun onFailure(call: Call<PostResult>, t: Throwable) {
+                    // 실패
+                    Log.d("log",t.message.toString())
+                    Log.d("log","fail")
+                }
+            })
+        }
+
     }
     //액션버튼 메뉴 액션바에 집어 넣기
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -34,7 +67,7 @@ class ClothesAddActivity : AppCompatActivity() {
         when (item?.itemId) {
             R.drawable.ic_baseline_home_24_white -> {
                 //안드로이드 홈화면 눌렀을 때
-                val back = Intent(this@ClothesAddActivity, MainActivity::class.java)
+                val back = Intent(this@ClothesAddActivity, MainClothesActivity::class.java)
                 startActivity(back)
                 finish()
             }

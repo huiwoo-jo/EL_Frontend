@@ -27,53 +27,41 @@
             android:textStyle="bold"
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
+
     <EditText
-        android:id="@+id/cloth_category"
+        android:id="@+id/add_cloth_category"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="카테고리 선택"
-        android:text="상의"/>
+        android:text="pants"/>
 
     <EditText
-        android:id="@+id/cloth_img"
+        android:id="@+id/add_cloth_img"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="이미지 입력"
         android:text="https://www.muji.com/wp-content/uploads/sites/12/2021/02/036.jpg"/>
     <EditText
-        android:id="@+id/cloth_name"
+        android:id="@+id/add_cloth_name"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="의류명 입력"
-        android:text="text"/>
+        android:text="test"/>
     <EditText
-        android:id="@+id/cloth_price"
+        android:id="@+id/add_cloth_price"
+        android:inputType="numberDecimal"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="가격 입력"
         android:text="800"/>
 
     <Button
         android:layout_gravity="center"
-        android:id="@+id/btnPost"
+        android:id="@+id/btnClothesPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="등록" />
-    <Button
-        android:layout_gravity="center"
-        android:id="@+id/btnGet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="출력" />
-    <TextView
-        android:layout_gravity="center"
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="초기값" />
 </LinearLayout>

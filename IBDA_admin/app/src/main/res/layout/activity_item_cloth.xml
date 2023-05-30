@@ -8,9 +8,8 @@
     android:background="@drawable/button_ripple_round_white"
     android:layout_margin="10dp"
     android:padding="5dp"
+    android:id="@+id/tv_bg"
     tools:context=".sc_clothes.ItemCloth">
-
-
 
         <GridLayout
             android:layout_width="match_parent"
@@ -109,7 +108,7 @@
                 android:textStyle="bold" />
 
             <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
-                android:id="@+id/btnClothEdit"
+                android:id="@+id/btnClothesEdit"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_row="4"
@@ -120,7 +119,7 @@
                 android:text="의상 수정" />
 
             <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
-                android:id="@+id/btnClothDelete"
+                android:id="@+id/btnClothesDelete"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_row="4"

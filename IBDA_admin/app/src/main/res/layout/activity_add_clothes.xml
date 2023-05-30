@@ -52,9 +52,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
+            android:layout_rowWeight="1"
             android:layout_column="0"
             android:padding="10dp"
-            android:text="의류 카테고리"
+            android:text="카테고리"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_gravity="center"
@@ -62,7 +63,8 @@
 
         <EditText
             android:id="@+id/add_cloth_category"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:minWidth="150dp"
             android:layout_height="match_parent"
             style="@style/TextInputLayoutStyle"
             android:theme="@style/TextInputLayoutStyle"
@@ -77,14 +79,16 @@
             android:layout_row="1"
             android:layout_column="0"
             android:padding="10dp"
-            android:text="이미지 선택"
+            android:text="이미지"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:textSize="20dp"/>
         <EditText
             android:id="@+id/add_cloth_img"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
+            android:minWidth="150dp"
             android:layout_height="match_parent"
             style="@style/TextInputLayoutStyle"
             android:theme="@style/TextInputLayoutStyle"
@@ -93,8 +97,19 @@
             android:hint="이미지 입력"
             android:textSize="20dp"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginLeft="150dp"
+            android:text="이미지 선택" />
+
         <TextView
             android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_column="0"
@@ -106,7 +121,9 @@
             android:textSize="20dp"/>
         <EditText
             android:id="@+id/add_cloth_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
+            android:minWidth="150dp"
             android:layout_height="match_parent"
             style="@style/TextInputLayoutStyle"
             android:theme="@style/TextInputLayoutStyle"
@@ -117,6 +134,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
             android:layout_height="wrap_content"
             android:layout_row="3"
             android:layout_column="0"
@@ -129,13 +147,15 @@
         <EditText
             android:id="@+id/add_cloth_price"
             android:inputType="numberDecimal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
+            android:minWidth="150dp"
             android:layout_height="match_parent"
             style="@style/TextInputLayoutStyle"
             android:theme="@style/TextInputLayoutStyle"
             android:layout_row="3"
             android:layout_column="1"
-            android:hint="의류 가격"
+            android:hint="의류 가격 입력"
             android:textSize="20dp"/>
     </GridLayout>
 

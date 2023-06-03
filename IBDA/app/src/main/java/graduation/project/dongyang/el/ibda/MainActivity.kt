@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     intent=Intent(this@MainActivity, LoginActivity::class.java)
                 }
                 R.id.btnNotMember-> {
-                    intent = Intent(this@MainActivity, MainClothes::class.java)
+                    intent = Intent(this@MainActivity, MainClothesActivity::class.java)
                     intent.putExtra("id", "비회원")
                 }
             }

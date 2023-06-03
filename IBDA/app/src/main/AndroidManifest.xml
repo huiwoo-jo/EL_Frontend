@@ -31,7 +31,7 @@
             android:name="graduation.project.dongyang.el.ibda.ItemCloth"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.MainClothes"
+            android:name="graduation.project.dongyang.el.ibda.MainClothesActivity"
             android:exported="false" />
         <activity
             android:name="graduation.project.dongyang.el.ibda.LoginActivity"

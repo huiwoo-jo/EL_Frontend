@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="graduation.project.dongyang.el.ibda.MainClothes">
+    tools:context="graduation.project.dongyang.el.ibda.MainClothesActivity">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,15 +16,50 @@
         android:minHeight="50dp"
         app:titleTextColor="@color/white" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btnTops"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="상의" />
+
+        <Button
+            android:id="@+id/btnPants"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="하의" />
+
+        <Button
+            android:id="@+id/btnRecommands"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="추천" />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_cloth"
+            android:id="@+id/rv_pant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recommand"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -63,28 +99,22 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/payment_button"
+                android:id="@+id/btnPayment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="결제" />
 
-            <Button
-                android:id="@+id/recommend_button"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="추천" />
 
             <Button
-                android:id="@+id/ar_button"
+                android:id="@+id/btnAR"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="AR" />
 
             <Button
-                android:id="@+id/experience_button"
+                android:id="@+id/btnExperience"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -95,3 +125,5 @@
     </LinearLayout>
 
 </LinearLayout>
+
+

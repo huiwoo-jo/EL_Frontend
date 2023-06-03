@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     if (userId.equals("admin") && userPwd.equals("1234")){
                         //회원 정보가 맞았을 경우
                         //의류 페이지 열기
-                        intent=Intent(this@LoginActivity, LoginActivity::class.java)
+                        intent=Intent(this@LoginActivity, MainClothesActivity::class.java)
                         intent.putExtra("id", userId)
                         intent.putExtra("password", userPwd)
                     }
@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
                 R.id.btnNotMember-> {
-                    intent = Intent(this@LoginActivity, MainClothes::class.java)
+                    intent = Intent(this@LoginActivity, MainClothesActivity::class.java)
                     intent.putExtra("id", "비회원")
                 }
                 R.id.btnHome->{

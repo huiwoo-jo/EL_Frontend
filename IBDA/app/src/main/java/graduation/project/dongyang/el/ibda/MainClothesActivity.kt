@@ -5,17 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.recyclerview.widget.GridLayoutManager
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.URL
 
-class MainClothes : AppCompatActivity() {
+class MainClothesActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainClothesBinding.inflate(layoutInflater)
     }
@@ -34,7 +30,21 @@ class MainClothes : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) //액션바에 표시되는 제목의 표시유무를 설정합니다. false로 해야 custom한 툴바의 이름이 화면에 보이게 됩니다.
         binding.toolbar.title = "의상 : " + userID.toString()
 
-        //의상 출력
+
+        // 뷰 초기 상태 설정
+        binding.rvTop.visibility = View.VISIBLE
+        binding.rvPant.visibility = View.GONE
+        binding.rvRecommand.visibility = View.GONE
+
+        //버튼 클릭
+        binding.btnTops.setOnClickListener{ButtonListener()}
+        binding.btnPants.setOnClickListener{ButtonListener()}
+        binding.btnRecommands.setOnClickListener{ButtonListener()}
+        binding.btnPayment.setOnClickListener{ButtonListener()}
+        binding.btnAR.setOnClickListener{ButtonListener()}
+        binding.btnExperience.setOnClickListener{ButtonListener()}
+
+        // ! 수정 필요 - 의상 출력 : 하단 하드코딩
         val footerProfileList = arrayListOf(
             ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
             ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2", 20000),
@@ -61,9 +71,11 @@ class MainClothes : AppCompatActivity() {
         footerRv.adapter = ClothFooterAdapter(footerProfileList)
         
         //thread
+        /*
         val thread = NetworkThread()
         thread.start()
         thread.join()
+         */
 
     }
     //액션버튼 메뉴 액션바에 집어 넣기
@@ -90,6 +102,53 @@ class MainClothes : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    // 버튼 클릭
+    inner class ButtonListener: View.OnClickListener {
+        override fun onClick(v: View?) {
+            var intent = Intent()
+            when (v?.id) {
+                // 의상 뷰
+                R.id.btnTops -> {
+                    // 상의 출력
+                    binding.rvTop.visibility=View.VISIBLE
+                    binding.rvPant.visibility=View.GONE
+                    binding.rvRecommand.visibility=View.GONE
+                }
+                R.id.btnPants -> {
+                    // 하의 출력
+                    binding.rvTop.visibility=View.GONE
+                    binding.rvPant.visibility=View.VISIBLE
+                    binding.rvRecommand.visibility=View.GONE
+                }
+                R.id.btnRecommands -> {
+                    // 추천 의상 출력
+                    val userID = intent.getStringExtra("id")
+                    if(userID == "비회원"){
+                        // 팝업 페이지로 변경
+                        Toast.makeText(this@MainClothesActivity, "회원 전용 페이지 입니다.", Toast.LENGTH_SHORT).show()
+                    }else {
+                        binding.rvTop.visibility = View.GONE
+                        binding.rvPant.visibility = View.GONE
+                        binding.rvRecommand.visibility = View.VISIBLE
+                    }
+                }
+                //페이지 이동
+                R.id.btnPayment -> {
+                    // 결제 페이지
+                }
+                R.id.btnAR -> {
+                    // AR 페이지
+                }
+                R.id.btnExperience -> {
+                    // 사이즈 측정 페이지
+                }
+            }
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    /*
     // 의상 출력
     inner class NetworkThread: Thread(){
         override fun run() {
@@ -131,7 +190,7 @@ class MainClothes : AppCompatActivity() {
                         JSON_Parse(jObject,"price")))
                 }
 
-                val rvCloth = binding.rvCloth
+                val rvCloth = binding.rvTop
                 rvCloth.layoutManager = GridLayoutManager(this@MainClothes,3)
                 rvCloth.setHasFixedSize(true)
                 rvCloth.adapter = ClothAdapter(clothList)
@@ -151,5 +210,6 @@ class MainClothes : AppCompatActivity() {
             }
         }
     }
+     */
 
 }

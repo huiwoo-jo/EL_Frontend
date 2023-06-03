@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kr.project.dongyang.EL.IBDA.R
 
-class ClothFooterAdapter(private val footerProfileList: ArrayList<ClothFooter>) : RecyclerView.Adapter<ClothFooterAdapter.CustomViewHolder>() {
+class ClothFooterAdapter(private val footerProfileList: ArrayList<ClothItemType>) : RecyclerView.Adapter<ClothFooterAdapter.CustomViewHolder>() {
     // ClothFooterAdapter는 RecyclerView.Adapter를 상속받습니다.
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothFooterAdapter.CustomViewHolder {

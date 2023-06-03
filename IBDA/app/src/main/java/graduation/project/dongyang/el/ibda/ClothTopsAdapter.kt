@@ -11,50 +11,45 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
 
-class ClothTopsAdapter(private val clothList: ArrayList<ClothFooter>) : RecyclerView.Adapter<ClothTopsAdapter.CustomViewHolder>(){
-
+class ClothTopsAdapter(private val footerProfileList: ArrayList<ClothItemType>) : RecyclerView.Adapter<ClothTopsAdapter.CustomViewHolder>() {
+    // ClothFooterAdapter는 RecyclerView.Adapter를 상속받습니다.
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothTopsAdapter.CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false)
-
+        // onCreateViewHolder 함수는 뷰 홀더를 생성합니다.
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth_footer, parent, false)
+        // R.layout.activity_item_cloth_footer를 인플레이션하여 뷰를 생성합니다.
         return CustomViewHolder(view).apply {
-            itemView.setOnClickListener{
-                absoluteAdapterPosition
+            itemView.setOnClickListener {
+
             }
-        } //class CustomViewHolder 에 view를 담아서 생성함.
+        }
+        // 새로운 CustomViewHolder를 생성하여 반환합니다.
     }
 
     override fun getItemCount(): Int {
-        return clothList.size //출력할 총 리스트의 갯수
+        return footerProfileList.size
+        // 데이터 세트의 아이템 수를 반환합니다.
     }
 
-    @SuppressLint("RestrictedApi")
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        // onCreateViewHolder 에서 만들어진 view를 연결해주는 역할. 지속적으로 호출되면서 match 시켜줌
-        val imageData = clothList[position]
-        val defaultImage = R.drawable.ibda_logo_png
-
-        holder.apply {
-            Glide.with(itemView)
-                .load(imageData.image) // 불러올 이미지 url
-                .placeholder(defaultImage) // 이미지 로딩 시작하기 전 표시할 이미지
-                .error(defaultImage) // 로딩 에러 발생 시 표시할 이미지
-                .fallback(defaultImage) // 로드할 url 이 비어있을(null 등) 경우 표시할 이미지
-                .into(image)
-            name.text = imageData.name
-            price.text = imageData.price
-        }
-
-        holder.image.setOnClickListener{
-            var intent = Intent(it.context, DetailClothes::class.java)
-            intent.putExtra("id", imageData.id)
-            it.context.startActivity(intent)
-        }
+        // onBindViewHolder 함수는 뷰 홀더에 데이터를 바인딩합니다.
+        holder.image.setImageResource(footerProfileList[position].image)
+        // 현재 위치의 프로필 이미지를 설정합니다.
+        holder.name.text = footerProfileList[position].name
+        // 현재 위치의 이름을 설정합니다.
+        holder.brand.text = footerProfileList[position].brand
+        // 현재 위치의 브랜드를 설정합니다.
+        holder.price.text = footerProfileList[position].price.toString()
     }
 
-    class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById<ImageView>(R.id.tv_image)
-        val name: TextView = itemView.findViewById<TextView>(R.id.tv_name)
-        val price: TextView = itemView.findViewById<TextView>(R.id.tv_price)
+    inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // CustomViewHolder는 RecyclerView.ViewHolder를 상속받는 클래스입니다.
+        val image: ImageView = itemView.findViewById<ImageView>(R.id.footer_profile)
+        // ImageView 객체를 초기화합니다.
+        val name: TextView = itemView.findViewById<TextView>(R.id.footer_name)
+        // TextView 객체를 초기화합니다.
+        val brand: TextView = itemView.findViewById<TextView>(R.id.footer_brand)
+        // TextView 객체를 초기화합니다.
+        val price: TextView = itemView.findViewById<TextView>(R.id.footer_price)
     }
 }

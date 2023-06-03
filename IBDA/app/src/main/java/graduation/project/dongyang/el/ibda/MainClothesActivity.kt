@@ -53,9 +53,9 @@ class MainClothesActivity : AppCompatActivity() {
         // ! 수정 필요 - 의상 출력 : 하단 하드코딩
         //의상 출력
         val footerProfileList = arrayListOf(
-            ClothFooter(R.drawable.pants2, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.top2, "브랜드2","상의1", 20000),
-            ClothFooter(R.drawable.top1, "브랜드3","상의2",30000)
+            ClothItemType(R.drawable.pants2, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.top2, "브랜드2","상의1", 20000),
+            ClothItemType(R.drawable.top1, "브랜드3","상의2",30000)
         )
         val footerRv = binding.footerRv
         footerRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
@@ -63,27 +63,27 @@ class MainClothesActivity : AppCompatActivity() {
         footerRv.adapter = ClothFooterAdapter(footerProfileList)
 
         val clothPantsList = arrayListOf(
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
-            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
-            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothItemType(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothItemType(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","하의3",30000),
 
 
             )
@@ -93,30 +93,30 @@ class MainClothesActivity : AppCompatActivity() {
         pantsRv.adapter = ClothTopsAdapter(clothPantsList)
 
         val clothRecommandsList = arrayListOf(
-            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
-            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
-            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
-            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
-            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
-            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
-            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
-            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
-            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
-            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
-            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
-            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
-            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
-            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
-            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothItemType(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothItemType(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothItemType(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothItemType(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothItemType(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothItemType(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothItemType(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothItemType(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothItemType(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothItemType(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothItemType(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothItemType(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothItemType(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothItemType(R.drawable.pants3, "브랜드3","추천3",30000),
 
             )
         val recommendRv = binding.rvRecommand

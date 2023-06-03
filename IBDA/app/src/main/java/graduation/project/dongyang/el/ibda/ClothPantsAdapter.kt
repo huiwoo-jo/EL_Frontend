@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.project.dongyang.EL.IBDA.R
 
-class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : RecyclerView.Adapter<ClothAdapter.CustomViewHolder>(){
+class ClothPantsAdapter(private val clothList: ArrayList<ClothesResponseItem>) : RecyclerView.Adapter<ClothPantsAdapter.CustomViewHolder>(){
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothAdapter.CustomViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClothPantsAdapter.CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false)
 
         return CustomViewHolder(view).apply {

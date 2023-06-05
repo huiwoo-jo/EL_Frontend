@@ -34,7 +34,7 @@ class ClothFooterAdapter(private val footerProfileList: ArrayList<ClothFooter>) 
         // 현재 위치의 프로필 이미지를 설정합니다.
         holder.name.text = footerProfileList[position].name
         // 현재 위치의 이름을 설정합니다.
-        holder.brand.text = footerProfileList[position].brand
+        //holder.brand.text = footerProfileList[position].brand
         // 현재 위치의 브랜드를 설정합니다.
         holder.price.text = footerProfileList[position].price.toString()
     }
@@ -45,7 +45,7 @@ class ClothFooterAdapter(private val footerProfileList: ArrayList<ClothFooter>) 
         // ImageView 객체를 초기화합니다.
         val name: TextView = itemView.findViewById<TextView>(R.id.footer_name)
         // TextView 객체를 초기화합니다.
-        val brand: TextView = itemView.findViewById<TextView>(R.id.footer_brand)
+        //val brand: TextView = itemView.findViewById<TextView>(R.id.footer_brand)
         // TextView 객체를 초기화합니다.
         val price: TextView = itemView.findViewById<TextView>(R.id.footer_price)
     }

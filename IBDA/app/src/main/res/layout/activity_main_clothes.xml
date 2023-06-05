@@ -16,12 +16,55 @@
         android:minHeight="50dp"
         app:titleTextColor="@color/white" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/tops_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#E6E6FA"
+            android:text="상의"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bottoms_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#E6E6FA"
+            android:text="하의"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/recommend_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#E6E6FA"
+            android:text="추천"
+            android:textStyle="bold" />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommendRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pantsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_cloth"
@@ -68,28 +111,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="결제" />
+                android:background="@color/blue_200"
+                android:text="결제"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/recommend_button"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="추천" />
 
             <Button
                 android:id="@+id/ar_button"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="AR" />
+                android:background="@color/blue_200"
+                android:text="AR"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/experience_button"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="체험" />
+                android:background="@color/blue_200"
+                android:text="체험"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

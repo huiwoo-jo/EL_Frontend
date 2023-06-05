@@ -1,20 +1,16 @@
 package graduation.project.dongyang.el.ibda
 
+
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-
+import androidx.recyclerview.widget.RecyclerView
 import kr.project.dongyang.EL.IBDA.R
 import kr.project.dongyang.EL.IBDA.databinding.ActivityMainClothesBinding
 import org.json.JSONArray
@@ -22,6 +18,7 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
+
 
 class MainClothes : AppCompatActivity() {
     private val binding by lazy {
@@ -42,32 +39,113 @@ class MainClothes : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) //액션바에 표시되는 제목의 표시유무를 설정합니다. false로 해야 custom한 툴바의 이름이 화면에 보이게 됩니다.
         binding.toolbar.title = "의상 : " + userID.toString()
 
+
+        val recyclerView1: RecyclerView = findViewById(R.id.rv_cloth)
+        val recyclerView2: RecyclerView = findViewById(R.id.pantsRv)
+        val recyclerView3: RecyclerView = findViewById(R.id.recommendRv)
+        val button1: Button = findViewById(R.id.tops_button)
+        val button2: Button = findViewById(R.id.bottoms_button)
+        val button3: Button = findViewById(R.id.recommend_button)
+
+        // 초기 상태 설정
+        recyclerView1.visibility = View.VISIBLE
+        recyclerView2.visibility = View.GONE
+        recyclerView3.visibility = View.GONE
+
+        button1.setOnClickListener {
+            // 버튼1을 클릭하면 recyclerView1을 보이게 하고, recyclerView2,3를 숨김
+            recyclerView1.visibility = View.VISIBLE
+            recyclerView2.visibility = View.GONE
+            recyclerView3.visibility = View.GONE
+        }
+
+        button2.setOnClickListener {
+            // 버튼2를 클릭하면 recyclerView2를 보이게 하고, recyclerView1,3을 숨김
+            recyclerView2.visibility = View.VISIBLE
+            recyclerView1.visibility = View.GONE
+            recyclerView3.visibility = View.GONE
+        }
+
+        button3.setOnClickListener {
+            // 버튼2를 클릭하면 recyclerView2를 보이게 하고, recyclerView1,3을 숨김
+            recyclerView2.visibility = View.GONE
+            recyclerView1.visibility = View.GONE
+            recyclerView3.visibility = View.VISIBLE
+        }
+
         //의상 출력
         val footerProfileList = arrayListOf(
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2", 20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
-            ClothFooter(R.drawable.el_logo_png, "브랜드1","상의1",10000),
-            ClothFooter(R.drawable.ibda_logo_png, "브랜드2","상의2",20000),
-            ClothFooter(R.drawable.dongyang_logo_png, "브랜드3","상의3",30000),
+            ClothFooter(R.drawable.pants2, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.top2, "브랜드2","상의1", 20000),
+            ClothFooter(R.drawable.top1, "브랜드3","상의2",30000)
         )
         val footerRv = binding.footerRv
         footerRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
         footerRv.setHasFixedSize(true)
         footerRv.adapter = ClothFooterAdapter(footerProfileList)
-        
+
+        val pantsClothList = arrayListOf(
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+            ClothFooter(R.drawable.pants1, "브랜드1","하의1",10000),
+            ClothFooter(R.drawable.pants2, "브랜드2","하의2", 20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","하의3",30000),
+
+
+        )
+        val pantsRv = binding.pantsRv
+        pantsRv.layoutManager = GridLayoutManager(this@MainClothes,3)
+        pantsRv.setHasFixedSize(true)
+        pantsRv.adapter = ClothPantsAdapter(pantsClothList)
+
+        val recommendClothList = arrayListOf(
+            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.top1, "브랜드1","추천1",50000),
+            ClothFooter(R.drawable.pants1, "브랜드2","추천2", 20000),
+            ClothFooter(R.drawable.top2, "브랜드3","추천3",30000),
+            ClothFooter(R.drawable.pants2, "브랜드1","추천1",10000),
+            ClothFooter(R.drawable.top3, "브랜드2","추천2",20000),
+            ClothFooter(R.drawable.pants3, "브랜드3","추천3",30000),
+
+        )
+        val recommendRv = binding.recommendRv
+        recommendRv.layoutManager = GridLayoutManager(this@MainClothes,3)
+        recommendRv.setHasFixedSize(true)
+        recommendRv.adapter = ClothRecommendAdapter(recommendClothList)
+
         //thread
         val thread = NetworkThread()
         thread.start()

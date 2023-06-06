@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-feature android:name="android.hardware.camera.any" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,26 +24,56 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="graduation.project.dongyang.el.ibda.MainActivity"
+            android:name="graduation.project.dongyang.el.ibda.activity.Login_Signup_Activity"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.DetailClothes"
+            android:name="graduation.project.dongyang.el.ibda.activity.Login_QR_Activity"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.ItemCloth"
+            android:name="graduation.project.dongyang.el.ibda.activity.AR_SizeActivity"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.MainClothesActivity"
+            android:name="graduation.project.dongyang.el.ibda.popup.Popup_Logout"
             android:exported="false" />
         <activity
-            android:name="graduation.project.dongyang.el.ibda.LoginActivity"
+            android:name="graduation.project.dongyang.el.ibda.activity.AR_ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.AI_RecommendActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.AR_fittingActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.LikeActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.ShopActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.SearchActivty"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.ClothesDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.recycler.ItemCloth"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.MainClothesActivity"
+            android:exported="false" />
+        <activity
+            android:name="graduation.project.dongyang.el.ibda.activity.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="graduation.project.dongyang.el.ibda.LoadingActivity"
+            android:name="graduation.project.dongyang.el.ibda.activity.LoadingActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

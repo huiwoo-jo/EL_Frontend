@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="50dp"
+    tools:context="graduation.project.dongyang.el.ibda.activity.Login_Signup_Activity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="80dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_main"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원 가입 방법"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/blue_main"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingHorizontal="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. IBDA 어플 다운로드"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/blue_main" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. 회원 가입 클릭"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/blue_main" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 회원 정보 입력"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/blue_main" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  1) 아이디"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/blue_main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+     ※ 5~20자의 영문 소문자, 숫자와 특수기호 -, _ 만 사용 가능합니다.\n"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/blue_main" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="   2) 비밀번호"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/blue_main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+     ※ 숫자만 사용 가능합니다.\n"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/blue_main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="   3) 휴대전화 인증"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/blue_main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+      ※ 휴대전화 인증은 동일한 번호로 1개월 1회, 6개월에 3회 가능하며 최대 3개의 아이디만 가입할 수 있습니다. (개인·단체 아이디 포함)\n\n
+      ※ 해외에서도 현지에서 이용하는 휴대폰으로 가입 가능합니다.\n\n
+      ※ 만 14미만의 미성년자는 보호자(법정대리인)의 동의가 필요합니다.\n\n"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/blue_main" />
+    </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginVertical="10dp"
+        android:text="메인화면으로 돌아가기"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/button_ripple_circle_blue"/>
+</LinearLayout>

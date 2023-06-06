@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp"
+    android:minHeight="300dp"
+    android:padding="20dp"
+    android:background="@drawable/button_round_blueline_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="IBDA"
+        android:textColor="@color/blue_main"
+        android:textStyle="bold"
+        android:textSize="50dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IBDA 회원 \n 전용 페이지입니다. \n\n 로그인하시겠습니까?"
+        android:textColor="@color/blue_main"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_margin="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_ripple_round_blue"/>
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닫기"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/blue_main"
+            android:background="@drawable/button_ripple_round_blueline_white"/>
+    </LinearLayout>
+
+
+</LinearLayout>

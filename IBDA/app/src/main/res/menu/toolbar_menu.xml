@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
-        android:id="@+id/action_home"
-        android:title="홈 화면"
-        android:icon="@drawable/ic_baseline_home_24_white"
+        android:id="@+id/action_search"
+        android:title="검색"
+        android:icon="@drawable/ic_baseline_search_50_blue"
         app:showAsAction="always" />
-    <item android:id="@+id/action_info"
-        android:title="도움말"
-        android:icon="@drawable/ic_baseline_info_24_white"
+    <item android:id="@+id/action_like"
+        android:title="찜"
+        android:icon="@drawable/ic_baseline_star_50_blue"
+        app:showAsAction="always"/>
+    <item android:id="@+id/action_basket"
+        android:title="장바구니"
+        android:icon="@drawable/ic_baseline_shopping_cart_50_blue"
+        app:showAsAction="always"/>
+    <item android:id="@+id/action_power"
+        android:title="종료"
+        android:icon="@drawable/ic_baseline_power_settings_new_50_blue"
         app:showAsAction="always"/>
 </menu>

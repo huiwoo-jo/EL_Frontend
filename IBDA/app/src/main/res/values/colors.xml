@@ -13,4 +13,6 @@
     <color name="blue_700">#0033B3</color>
     <color name="blue_main">#313664</color>
     <color name="blue_icon">#4F76FF</color>
+    <color name="Transparency">#00FFFFFF</color>
+    <color name="red">#FF4444</color>
 </resources>

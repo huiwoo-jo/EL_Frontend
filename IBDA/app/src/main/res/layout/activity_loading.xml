@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="graduation.project.dongyang.el.ibda.LoadingActivity"
+    tools:context="graduation.project.dongyang.el.ibda.activity.LoadingActivity"
     android:id="@+id/loadingBG">
 
     <LinearLayout
@@ -26,11 +26,11 @@
             android:textStyle="bold"
             android:padding="15dp"/>
 
-        <Button
+        <TextView
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_ripple_white"
+            android:background="@drawable/button_round_white"
             android:gravity="center"
             android:layout_gravity="center"
             android:padding="20dp"

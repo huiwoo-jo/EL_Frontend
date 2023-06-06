@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="graduation.project.dongyang.el.ibda.activity.AR_SizeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        app:titleTextColor="@color/blue_main" >
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textColor="@color/blue_main"
+            android:textSize="40dp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="발판 위에 서서 \n화면에 보이는 자세에 맞춰\n 가만히 계십시오."
+        android:textSize="20dp"
+        android:textColor="@color/blue_main"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+        <!--<androidx.camera.view.PreviewView
+            android:id="@+id/viewFinder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:srcCompat="@tools:sample/avatars">
+        </androidx.camera.view.PreviewView>-->
+        <ImageView
+            android:id="@+id/imgAR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ar_person"
+            android:visibility="invisible"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/size_guideline" />
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -44,13 +44,13 @@ class MainClothesActivity : AppCompatActivity() {
         binding.btnAll.setButtonDrawable(R.drawable.selector_round_blue_button)
         binding.btnTops.setButtonDrawable(R.drawable.selector_round_blue_button)
         binding.btnPants.setButtonDrawable(R.drawable.selector_round_blue_button)
-        binding.btnOutter.setButtonDrawable(R.drawable.selector_round_blue_button)
+        binding.btnDress.setButtonDrawable(R.drawable.selector_round_blue_button)
         binding.btnEtc.setButtonDrawable(R.drawable.selector_round_blue_button)
 
         binding.btnAll.setOnClickListener(ButtonListener())
         binding.btnTops.setOnClickListener(ButtonListener())
         binding.btnPants.setOnClickListener(ButtonListener())
-        binding.btnOutter.setOnClickListener(ButtonListener())
+        binding.btnDress.setOnClickListener(ButtonListener())
         binding.btnEtc.setOnClickListener(ButtonListener())
 
         binding.btnMainAI.setOnClickListener(ButtonListener())
@@ -74,6 +74,7 @@ class MainClothesActivity : AppCompatActivity() {
             ClothesHardcodingItem("하의", R.drawable.pants1, "하의1", 1000),
             ClothesHardcodingItem("하의", R.drawable.pants2, "하의2", 2000),
             ClothesHardcodingItem("하의", R.drawable.pants3, "하의3", 3000),
+            ClothesHardcodingItem("드레스", R.drawable.dress1, "드레스1", 1000),
         )
         val allRv = binding.rvAll
         allRv.layoutManager = GridLayoutManager(this,3)
@@ -99,6 +100,14 @@ class MainClothesActivity : AppCompatActivity() {
         pantsRv.layoutManager = GridLayoutManager(this,3)
         pantsRv.setHasFixedSize(true)
         pantsRv.adapter = ClothHardCodingAdapter(clothPantsList)
+
+        val clothDressList = arrayListOf(
+            ClothesHardcodingItem("드레스", R.drawable.dress1, "드레스1", 1000),
+        )
+        val dressRv = binding.rvDress
+        dressRv.layoutManager = GridLayoutManager(this,3)
+        dressRv.setHasFixedSize(true)
+        dressRv.adapter = ClothHardCodingAdapter(clothDressList)
 
 
         //thread
@@ -176,25 +185,33 @@ class MainClothesActivity : AppCompatActivity() {
         override fun onClick(v: View?) {
             val userID = intent.getStringExtra("id")
 
+            binding.rvAll.visibility=View.GONE
+            binding.rvTop.visibility=View.GONE
+            binding.rvPant.visibility=View.GONE
+            binding.rvDress.visibility=View.GONE
+            binding.rvEtc.visibility=View.GONE
+
             when (v?.id) {
                 // 의상 뷰
                 R.id.btnAll -> {
                     // 상의 출력
                     binding.rvAll.visibility=View.VISIBLE
-                    binding.rvTop.visibility=View.GONE
-                    binding.rvPant.visibility=View.GONE
                 }
                 R.id.btnTops -> {
                     // 상의 출력
-                    binding.rvAll.visibility=View.GONE
                     binding.rvTop.visibility=View.VISIBLE
-                    binding.rvPant.visibility=View.GONE
                 }
                 R.id.btnPants -> {
                     // 하의 출력
-                    binding.rvAll.visibility=View.GONE
-                    binding.rvTop.visibility=View.GONE
                     binding.rvPant.visibility=View.VISIBLE
+                }
+                R.id.btnDress -> {
+                    // 드레스 출력
+                    binding.rvDress.visibility=View.VISIBLE
+                }
+                R.id.btnEtc -> {
+                    // 잡화 출력
+                    binding.rvEtc.visibility=View.VISIBLE
                 }
                 R.id.btnMainAI -> {
                     if(userID=="비회원") {

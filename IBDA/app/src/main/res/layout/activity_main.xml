@@ -50,7 +50,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@color/Transparency"
-                android:src="@drawable/top1"
+                android:src="@drawable/ic_baseline_supervisor_account_50_blue"
                 android:text="@string/member"
                 android:gravity="center"/>
             <TextView
@@ -77,7 +77,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@color/Transparency"
-                android:src="@drawable/top1"
+                android:src="@drawable/ic_baseline_person_outline_50_blue"
                 android:text="@string/member"
                 android:gravity="center"/>
             <TextView

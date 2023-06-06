@@ -130,14 +130,14 @@
             android:textStyle="bold"/>
 
         <RadioButton
-            android:id="@+id/btnOutter"
+            android:id="@+id/btnDress"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:background="@drawable/selector_round_blue_button"
             android:textColor="@color/blue_main"
             android:layout_marginHorizontal="5dp"
-            android:text="아우터"
+            android:text="드레스"
             android:textAlignment="center"
             android:textStyle="bold"/>
         <RadioButton
@@ -196,6 +196,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/rv_etc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <graduation.project.dongyang.el.ibda.button.SquareImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/Transparency"
+                android:src="@drawable/ic_baseline_question_mark_50_blue"
+                android:scaleType="fitXY" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="상품을 찾을 수 없습니다."
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_main"
+                android:textAlignment="center"/>
+        </LinearLayout>
 
     </FrameLayout>
 

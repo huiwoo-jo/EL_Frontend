@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             when (v?.id) {
                 R.id.main_btn_members -> {
                     // 메인 -> 회원 관리
-                    intent = Intent(this@MainActivity, MainActivity::class.java)
+                    intent = Intent(this@MainActivity, MainMemberActivity::class.java)
                 }
                 R.id.main_btn_clothes -> {
                     //메인 -> 의류 관리

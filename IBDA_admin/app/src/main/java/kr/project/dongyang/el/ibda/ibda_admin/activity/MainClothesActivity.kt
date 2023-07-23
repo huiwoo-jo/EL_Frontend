@@ -7,15 +7,11 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import kr.project.dongyang.el.ibda.ibda_admin.sc_clothes.ClothAdapter
+import graduation.project.dongyang.el.ibda.adapter.ClothHardCodingAdapter
 import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesResponseItem
 import kr.project.dongyang.el.ibda.ibda_admin.R
 import kr.project.dongyang.el.ibda.ibda_admin.databinding.ActivityMainClothesBinding
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.URL
+import graduation.project.dongyang.el.ibda.recycler.ClothesHardcodingItem
 
 
 class MainClothesActivity : AppCompatActivity() {
@@ -42,10 +38,28 @@ class MainClothesActivity : AppCompatActivity() {
         binding.btnUpPage.setOnClickListener(ButtonListener())
         binding.btnDownPage.setOnClickListener(ButtonListener())
 
+// ! 수정 필요 - 의상 출력 : 하드코딩
+        //의상 출력
+
+        val clothAllList = arrayListOf(
+            ClothesHardcodingItem(1,"상의", R.drawable.top1, "상의1", 1000),
+            ClothesHardcodingItem(2,"상의", R.drawable.top2, "상의2", 2000),
+            ClothesHardcodingItem(3,"상의", R.drawable.top3, "상의3", 3000),
+            ClothesHardcodingItem(4,"하의", R.drawable.pants1, "하의1", 1000),
+            ClothesHardcodingItem(5,"하의", R.drawable.pants2, "하의2", 2000),
+            ClothesHardcodingItem(6,"하의", R.drawable.pants3, "하의3", 3000),
+            ClothesHardcodingItem(7,"드레스", R.drawable.dress1, "드레스1", 1000),
+        )
+        val allRv = binding.rvCloth
+        allRv.layoutManager = GridLayoutManager(this,1)
+        allRv.setHasFixedSize(true)
+        allRv.adapter = ClothHardCodingAdapter(clothAllList)
         //thread
+        /*
         val thread = NetworkThread()
         thread.start()
         thread.join()
+         */
 
     }
     //액션버튼 메뉴 액션바에 집어 넣기
@@ -75,7 +89,6 @@ class MainClothesActivity : AppCompatActivity() {
                     intent = Intent(this@MainClothesActivity, ClothesAddActivity::class.java)
                 }
                 R.id.btnUpPage -> {
-
                 }
                 R.id.btnDownPage ->{
                 }
@@ -86,6 +99,7 @@ class MainClothesActivity : AppCompatActivity() {
     }
 
     // 의상 출력
+    /*
     inner class NetworkThread: Thread(){
         override fun run() {
 
@@ -149,5 +163,5 @@ class MainClothesActivity : AppCompatActivity() {
             }
         }
     }
-
+    */
 }

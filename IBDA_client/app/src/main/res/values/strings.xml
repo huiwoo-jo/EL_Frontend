@@ -1,3 +1,19 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IBDA_client</string>
+    <string name="ibda">IBDA</string>
+    <string name="password">비밀번호</string>
+    <string name="id">아이디, 이메일, 전화번호</string>
+    <string name="admin">ADMIN</string>
+    <string name="main_btn_members">회원 관리</string>
+    <string name="main_btn_clothes">의류 관리</string>
+    <string name="main_btn_inventory">재고 관리</string>
+    <string name="main_btn_setting">계정</string>
+    <string name="hint_cloth_id">의류 아이디</string>
+    <string name="hint_cloth_name">의류명</string>
+    <string name="hint_cloth_price">의류 가격</string>
+    <string name="hint_cloth_cate">카테 고리</string>
+    <string name="popup_clothes_edit">의류 정보를 \n 수정하시겠습니까?</string>
+    <string name="popup_clothes_del">의류 정보를 \n 삭제하시겠습니까?</string>
+    <string name="popup_member_edit">회원 정보를 \n 수정하시겠습니까?</string>
+    <string name="popup_member_del">회원 정보를 \n 삭제하시겠습니까?</string>
 </resources>

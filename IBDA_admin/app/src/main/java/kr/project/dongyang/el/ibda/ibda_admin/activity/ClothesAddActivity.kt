@@ -86,10 +86,10 @@ class ClothesAddActivity : AppCompatActivity() {
             when (v?.id) {
                 R.id.btnClothesPost -> {
                     //Clothes등록
-                    val category = binding.addClothCategory.text.toString()
-                    val name = binding.addClothName.text.toString()
-                    val image = binding.addClothImg.text.toString()
-                    val price = Integer.parseInt(binding.addClothPrice.text.toString())
+                    val category = binding.clothCategory.text.toString()
+                    val name = binding.clothName.text.toString()
+                    val image = binding.clothImage.toString()
+                    val price = Integer.parseInt(binding.clothPrice.text.toString())
                     val data = ClothesPostItem(category, name, image, price)
 
                     api.post_clothes(data).enqueue(object : Callback<PostResult> {
@@ -142,8 +142,7 @@ class ClothesAddActivity : AppCompatActivity() {
                val uri = it.data!!.data
                Glide.with(this)
                    .load(uri)
-                   .into(binding.imgClothes)
-               binding.addClothImg.setText(uri.toString())
+                   .into(binding.clothImage)
            }
     }
 }

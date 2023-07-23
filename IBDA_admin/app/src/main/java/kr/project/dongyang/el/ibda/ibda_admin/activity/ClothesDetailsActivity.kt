@@ -38,10 +38,31 @@ class ClothesDetailsActivity : AppCompatActivity() {
         binding.btnEdit.setOnClickListener(ButtonListener())
         binding.btnNext.setOnClickListener(ButtonListener())
 
+
+        //정보
+        binding.clothBrand.text = "IBDA"
+        binding.clothCategory.text = intent.getStringExtra("category")
+        binding.clothName.text = intent.getStringExtra("name")
+        binding.clothPrice.text = intent.getStringExtra("price")
+
+        val imageData =  intent.getStringExtra("image")?.toInt()
+        val defaultImage = R.drawable.ibda_logo_png
+
+        binding.clothImage.apply {
+            Glide.with(this)
+                .load(imageData) // 불러올 이미지 url
+                .placeholder(defaultImage) // 이미지 로딩 시작하기 전 표시할 이미지
+                .error(defaultImage) // 로딩 에러 발생 시 표시할 이미지
+                .fallback(defaultImage) // 로드할 url 이 비어있을(null 등) 경우 표시할 이미지
+                .into(binding.clothImage)
+        }
+
         //thread
+        /*
         val thread = NetworkThread()
         thread.start()
         thread.join()
+         */
     }
     //액션버튼 메뉴 액션바에 집어 넣기
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -64,8 +85,13 @@ class ClothesDetailsActivity : AppCompatActivity() {
     //버튼 클릭
     inner class ButtonListener: View.OnClickListener {
         override fun onClick(v: View?) {
-            // 의류 번호
+            // 의류 정보
             val id = intent.getStringExtra("id")
+            val category = intent.getStringExtra("category")
+            val image = intent.getStringExtra("image")
+            val name = intent.getStringExtra("name")
+            val price = intent.getStringExtra("price")
+
             val num = id?.toInt()
 
             var intent = Intent()
@@ -89,8 +115,13 @@ class ClothesDetailsActivity : AppCompatActivity() {
                 }
                 R.id.btnEdit -> {
                     // 메인 -> 회원 관리
-                    intent = Intent(this@ClothesDetailsActivity, ClothesEditActivity::class.java)
-                    //intent.putExtra("id", num.toString())
+
+                    var intent = Intent(this@ClothesDetailsActivity, ClothesEditActivity::class.java)
+                    intent.putExtra("id", id)
+                    intent.putExtra("category", category)
+                    intent.putExtra("image", image)
+                    intent.putExtra("name", name)
+                    intent.putExtra("price", price)
                     startActivity(intent)
                     finish()
                 }
@@ -107,6 +138,7 @@ class ClothesDetailsActivity : AppCompatActivity() {
         }
     }
 
+    /*
     inner class NetworkThread: Thread(){
         // 의류 번호
         val id = intent.getStringExtra("id")
@@ -149,7 +181,7 @@ class ClothesDetailsActivity : AppCompatActivity() {
                 }
                 binding.clothName.text = jObject?.let { JSON_Parse(it,"name") }
                 binding.clothPrice.text = jObject?.let { JSON_Parse(it,"price") }
-                binding.clothCate.text = jObject?.let { JSON_Parse(it,"category") }
+                binding.clothCategory.text = jObject?.let { JSON_Parse(it,"category") }
 
                 Glide.with(this@ClothesDetailsActivity)
                     .load(url) // 불러올 이미지 url
@@ -172,5 +204,7 @@ class ClothesDetailsActivity : AppCompatActivity() {
                 "없습니다."
             }
         }
+
     }
+     */
 }

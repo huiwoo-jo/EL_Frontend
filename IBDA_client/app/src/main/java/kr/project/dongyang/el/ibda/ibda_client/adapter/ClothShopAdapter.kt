@@ -1,27 +1,22 @@
-package kr.project.dongyang.el.ibda.ibda_admin.sc_clothes
+package graduation.project.dongyang.el.ibda.adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kr.project.dongyang.el.ibda.ibda_admin.R
-import kr.project.dongyang.el.ibda.ibda_admin.activity.ClothesDetailsActivity
-import kr.project.dongyang.el.ibda.ibda_admin.activity.ClothesEditActivity
-import kr.project.dongyang.el.ibda.ibda_admin.activity.MainClothesActivity
-import kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
-import kr.project.dongyang.el.ibda.ibda_admin.data.ClothesResponseItem
+import graduation.project.dongyang.el.ibda.recycler.ClothesHardcodingItem
+import kr.project.dongyang.el.ibda.ibda_client.R
 
-class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : RecyclerView.Adapter<ClothAdapter.CustomViewHolder>(){
+class ClothShopAdapter(private val clothList: ArrayList<ClothesHardcodingItem>) : RecyclerView.Adapter<ClothShopAdapter.CustomViewHolder>(){
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_cloth_shop, parent, false)
 
         return CustomViewHolder(view).apply {
             itemView.setOnClickListener{
@@ -41,7 +36,6 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
         val defaultImage = R.drawable.ibda_logo_png
 
         holder.apply {
-            id.text="No. " + (imageData.id.toInt()+1).toString()
             Glide.with(itemView)
                 .load(imageData.image) // 불러올 이미지 url
                 .placeholder(defaultImage) // 이미지 로딩 시작하기 전 표시할 이미지
@@ -49,30 +43,26 @@ class ClothAdapter(private val clothList: ArrayList<ClothesResponseItem>) : Recy
                 .fallback(defaultImage) // 로드할 url 이 비어있을(null 등) 경우 표시할 이미지
                 .into(image)
             name.text = imageData.name
-            price.text = imageData.price
+            price.text = imageData.price.toString()
         }
-
-
-        holder.background.setOnClickListener{
-            var intent=Intent(it.context, ClothesDetailsActivity::class.java)
+/*
+        holder.image.setOnClickListener{
+            var intent = Intent(it.context, ClothesDetailsActivity::class.java)
             intent.putExtra("id", imageData.id)
             it.context.startActivity(intent)
         }
 
-        holder.btnEdit.setOnClickListener{
-            var intent=Intent(it.context, ClothesEditActivity::class.java)
-            intent.putExtra("id", imageData.id)
-            it.context.startActivity(intent)
+ */
+        holder.bg.setOnClickListener{
+            holder.checkBox.toggle()
         }
     }
 
     class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val background :View = itemView.findViewById(R.id.tv_bg)
-        val id: TextView = itemView.findViewById(R.id.tv_id)
+        val bg:View= itemView.findViewById<View>(R.id.tv_bg)
         val image: ImageView = itemView.findViewById<ImageView>(R.id.tv_image)
         val name: TextView = itemView.findViewById<TextView>(R.id.tv_name)
         val price: TextView = itemView.findViewById<TextView>(R.id.tv_price)
-
-        val btnEdit: SquareImageButton = itemView.findViewById(R.id.btnClothesEdit)
+        val checkBox : CheckBox = itemView.findViewById<CheckBox>(R.id.checkbox)
     }
 }

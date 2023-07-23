@@ -29,7 +29,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <!-- 기본 정보 레이아웃 박스 -->
-        <LinearLayout
+       <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -71,71 +71,202 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-    <!-- 뷰 페이저 임시 변환
+    <!- 뷰 페이저 임시 변환
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/cloth_image_slider"
         android:layout_width="match_parent"
         android:layout_height="400dp" />
         -->
 
-    <ImageView
-        android:id="@+id/cloth_image_slider"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        android:gravity="center">
-        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
-            android:id="@+id/btnPrev"
-            android:layout_width="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_ripple_round_blueline_white"
-            android:layout_marginHorizontal="5dp"
-            android:text="◀"
-            android:textColor="@color/blue_main"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_ripple_round_blueline_white"
-            android:layout_marginHorizontal="5dp"
-            android:text="홈"
-            android:textColor="@color/blue_main"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/cloth_image"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/el_logo_png"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_ripple_round_blue"
-            android:layout_marginHorizontal="5dp"
-            android:text="수정"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
-            android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_ripple_round_blueline_white"
-            android:layout_marginHorizontal="5dp"
-            android:text="▶"
-            android:textColor="@color/blue_main"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="브랜드명"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/cloth_brand"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:hint="브랜드명"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="상품명"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cloth_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:hint="상품명"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="가격"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cloth_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:hint="가격"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="카테고리"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cloth_category"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:hint="카테고리"
+                    android:textColor="@color/blue_main"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center">
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
+                android:id="@+id/btnPrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_ripple_round_blueline_white"
+                android:layout_marginHorizontal="5dp"
+                android:text="◀"
+                android:textColor="@color/blue_main"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_ripple_round_blueline_white"
+                android:layout_marginHorizontal="5dp"
+                android:text="홈"
+                android:textColor="@color/blue_main"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_ripple_round_blue"
+                android:layout_marginHorizontal="5dp"
+                android:text="수정"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <kr.project.dongyang.el.ibda.ibda_admin.button.SquareButton
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_ripple_round_blueline_white"
+                android:layout_marginHorizontal="5dp"
+                android:text="▶"
+                android:textColor="@color/blue_main"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
 </LinearLayout>

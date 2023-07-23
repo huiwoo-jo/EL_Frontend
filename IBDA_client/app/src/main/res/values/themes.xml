@@ -5,5 +5,59 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--FilledBox일 경우 밑줄 색상, OutlinedBox일 경우 테두리 색상-->
+        <item name="boxStrokeColor">@color/blue_main</item>
+        <!--Counter-->
+        <item name="counterTextAppearance">@style/CounterTextAppearance</item>
+        <!--EditText에 있을때의 Hint-->
+        <item name="android:textColorHint">@color/blue_main</item>
+        <!--상단에 있을때의 Hint-->
+        <item name="hintTextColor">@color/blue_main</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <!--Helper-->
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+        <!--Error-->
+        <item name="errorEnabled">true</item>
+        <item name="colorError">@color/blue_main</item>
+        <item name="errorIconDrawable">@android:color/transparent</item>
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <!--cursor-->
+        <item name="colorControlNormal">@color/blue_main</item>
+        <item name="colorControlActivated">@color/blue_main</item>
+        <item name="colorControlHighlight">@color/blue_main</item>
+    </style>
+
+    <style name="ErrorTextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="HintTextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="HelperTextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CounterTextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextInputEditTextStyle">
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Theme.IBDA_client" parent="Base.Theme.IBDA_client" />
 </resources>

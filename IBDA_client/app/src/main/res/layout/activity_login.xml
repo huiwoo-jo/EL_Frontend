@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="activity.LoginActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:paddingVertical="20dp"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ibda"
+            android:textSize="100dp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_main"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!-- 로그인 -->
+        <LinearLayout
+            android:id="@+id/box_id"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="10dp"
+            android:layout_weight="10"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+            <!-- 아이디 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="true"
+                style="@style/TextInputLayoutStyle"
+                android:theme="@style/TextInputLayoutStyle"
+                android:hint="@string/id">
+
+                <EditText
+                    android:id="@+id/inputId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawablePadding="20dp"
+                    android:inputType="text"
+                    android:padding="20dp"
+                    android:textColor="@color/blue_main"
+                    android:textColorHint="@color/blue_main"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- 비밀번호 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="true"
+                style="@style/TextInputLayoutStyle"
+                android:theme="@style/TextInputLayoutStyle"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/blue_main">
+
+                <EditText
+                    android:id="@+id/inputPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawablePadding="20dp"
+                    android:inputType="numberPassword"
+                    android:padding="20dp"
+                    android:textColor="@color/blue_main"
+                    android:textColorHint="@color/blue_main"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="로그인 상태 유지"
+                android:textColor="@color/blue_main"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:text="로그인"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:paddingHorizontal="25dp"
+            android:background="@drawable/button_ripple_round_blue"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원 가입 | 아이디, 비밀번호 찾기"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:textColor="@color/blue_main"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</LinearLayout>

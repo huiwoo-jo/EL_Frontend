@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +19,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.MemberEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MemberDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name=".popup.PopupClothesEdit"
+            android:exported="false" />
+        <activity
             android:name=".activity.ClothesEditActivity"
             android:exported="false" />
         <activity
@@ -28,7 +40,7 @@
             android:name=".activity.ClothesAddActivity"
             android:exported="false" />
         <activity
-            android:name=".sc_clothes.ItemCloth"
+            android:name=".recyclerItem.ItemCloth"
             android:exported="false" />
         <activity
             android:name=".activity.MainClothesActivity"

@@ -1,18 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="50dp"
+        app:titleTextColor="@color/blue_main" >
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="IBDA"
+            android:textColor="@color/blue_main"
+            android:textSize="40dp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnMainAll"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/Transparency"
+            android:text="전체"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btnMainNew"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/Transparency"
+            android:text="신상품"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btnMainBest"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/Transparency"
+            android:text="베스트"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btnMainSale"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/Transparency"
+            android:text="세일"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btnMainAI"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:background="@color/Transparency"
+            android:text="AI 추천"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btnAll"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_round_blue_button"
+            android:textColor="@color/blue_main"
+            android:layout_marginHorizontal="5dp"
+            android:checked="true"
+            android:text="전체"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/btnTops"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_round_blue_button"
+            android:textColor="@color/blue_main"
+            android:layout_marginHorizontal="5dp"
+            android:text="상의"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/btnPants"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_round_blue_button"
+            android:textColor="@color/blue_main"
+            android:layout_marginHorizontal="5dp"
+            android:text="하의"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/btnDress"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_round_blue_button"
+            android:textColor="@color/blue_main"
+            android:layout_marginHorizontal="5dp"
+            android:text="드레스"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+        <RadioButton
+            android:id="@+id/btnEtc"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_round_blue_button"
+            android:textColor="@color/blue_main"
+            android:layout_marginHorizontal="5dp"
+            android:text="잡화"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_margin="20dp">
+        <CheckBox
+            android:id="@+id/btnSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_swap_vert_24_blue"
+            />
+        <TextView
+            android:id="@+id/textSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기순"
+            android:textSize="20dp"
+            android:textColor="@color/blue_main"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:layout_weight="3">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/rv_etc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <kr.project.dongyang.el.ibda.ibda_client.button.SquareImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/Transparency"
+                android:src="@drawable/ic_baseline_question_mark_50_blue"
+                android:scaleType="fitXY" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="상품을 찾을 수 없습니다."
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_main"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
+
+

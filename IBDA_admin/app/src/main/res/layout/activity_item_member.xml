@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/button_ripple_round_white"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:id="@+id/tv_bg"
+    tools:context=".recyclerItem.ItemMember">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="7"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="관리자/회원"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:text="이름"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:text="나이"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
+            android:id="@+id/btnMemberEdit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_ripple_round_blue"
+            android:src="@drawable/ic_baseline_build_24_white"
+            android:text="의상 수정" />
+
+        <kr.project.dongyang.el.ibda.ibda_admin.button.SquareImageButton
+            android:id="@+id/btnMemberDelete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_ripple_round_blue"
+            android:src="@drawable/ic_baseline_delete_24_white"
+            android:text="의상 삭제" />
+    </GridLayout>
+</LinearLayout>

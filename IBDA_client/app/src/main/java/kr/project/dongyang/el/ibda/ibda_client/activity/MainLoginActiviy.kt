@@ -23,11 +23,11 @@ class MainLoginActiviy : AppCompatActivity() {
 
     inner class ButtonListener: View.OnClickListener {
         override fun onClick(v: View?) {
-            var intent = Intent()
+            var intent = Intent(this@MainLoginActiviy, LoginActivity::class.java)
 
             when (v?.id) {
                 R.id.btnLogin ->{
-                        intent= Intent(this@MainLoginActiviy, MainActivity::class.java)
+                        intent= Intent(this@MainLoginActiviy, LoginActivity::class.java)
                 }
             }
             startActivity(intent)

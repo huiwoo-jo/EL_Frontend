@@ -39,7 +39,14 @@ class MainMemberActivity : AppCompatActivity() {
         //의상 출력
 
         val memberAllList = arrayListOf(
-            MemberHardcodingItem(1,"huiwoo-jo", "조희우", 22,"admin"),
+            MemberHardcodingItem(1,"huiwoo-jo", "김동양", 25,"admin"),
+            MemberHardcodingItem(2,"huiwoo-jo", "최미래", 30,"admin"),
+            MemberHardcodingItem(3,"huiwoo-jo", "한대학", 24,"admin"),
+            MemberHardcodingItem(4,"huiwoo-jo", "이고척", 32,"mem"),
+            MemberHardcodingItem(5,"huiwoo-jo", "강하늘", 45,"mem"),
+            MemberHardcodingItem(6,"huiwoo-jo", "최한나", 22,"mem"),
+            MemberHardcodingItem(7,"huiwoo-jo", "장소라", 27,"mem"),
+            MemberHardcodingItem(8,"huiwoo-jo", "박슬기", 36,"mem"),
         )
         val allRv = binding.rvMember
         allRv.layoutManager = GridLayoutManager(this,1)

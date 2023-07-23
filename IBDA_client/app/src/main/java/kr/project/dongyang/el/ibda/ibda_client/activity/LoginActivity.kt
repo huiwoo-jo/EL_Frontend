@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener(ButtonListener())
     }
+
     inner class ButtonListener: View.OnClickListener {
         override fun onClick(v: View?) {
             var intent = Intent()
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
                     val userId = binding.inputId.text.toString().trim()
                     val userPwd = binding.inputPwd.text.toString().trim()
 
-                    if (userId.equals("admin") && userPwd.equals("1234")){
+                    if (userId.equals("client") && userPwd.equals("1234")){
                         //회원 정보가 맞았을 경우
                         //의류 페이지 열기
                         intent= Intent(this@LoginActivity, MainActivity::class.java)
